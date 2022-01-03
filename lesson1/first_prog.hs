@@ -9,3 +9,5 @@ messyMain = do
   print ("Dear " ++ recipient ++ ",\n" ++
     "Thanks for buying " ++ title ++ "\nthanks,\n" ++
     author )
+
+toPart recipient = "Dear" ++ recipient ++ ",\n"
