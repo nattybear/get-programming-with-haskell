@@ -10,4 +10,4 @@ messyMain = do
     "Thanks for buying " ++ title ++ "\nthanks,\n" ++
     author )
 
-toPart recipient = "Dear" ++ recipient ++ ",\n"
+toPart recipient = "Dear " ++ recipient ++ ",\n"
