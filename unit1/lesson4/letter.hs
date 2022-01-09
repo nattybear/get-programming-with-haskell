@@ -15,6 +15,9 @@ nyOffice name = nameText ++ ": PO Box 789 - New York, NY, 10013"
 renoOffice name = nameText ++ " - PO Box 456 - Reno, NV 89523"
   where nameText = snd name
 
+wsOffice name = nameText ++ " - PO Box 0000 - Wasington, XX, 00000"
+  where nameText = (fst name) ++ " " ++ (snd name) ++ " Esq"
+
 getLocationFunction location = case location of
   "ny" -> nyOffice
   "sf" -> sfOffice
