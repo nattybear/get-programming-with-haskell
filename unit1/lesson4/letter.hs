@@ -1,5 +1,5 @@
-addressLetter name location = nameText ++ " - " ++ location
-  where nameText = (fst name) ++ " " ++ (snd name)
+addressLetter name location = locationFunction name
+  where locationFunction = getLocationFunction location
 
 sfOffice name = if lastName < "L"
                 then nameText
