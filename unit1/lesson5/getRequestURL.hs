@@ -15,3 +15,8 @@ genApiRequestBuilder hostBuilder apiKey = (\resource id ->
                                             hostBuilder apiKey resource id)
 
 myExampleUrlBuilder = genApiRequestBuilder exampleUrlBuilder "1337hAsk3ll"
+
+-- Quick check 5.2
+genApiRequestBuilder hostBuilder apiKey resource = (\id ->
+                                                     hostBuilder apiKey
+                                                     resource id)
