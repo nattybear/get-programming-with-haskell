@@ -11,3 +11,5 @@ square n = n * n
 ifEvenInc n = ifEven inc n
 ifEvenDouble n = ifEven double n
 ifEvenSquare n = ifEven square n
+
+genIfEven f = (\x -> ifEven f x)
