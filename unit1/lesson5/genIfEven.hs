@@ -13,3 +13,6 @@ genIfEven f = (\x -> ifEven f x)
 ifEvenInc = genIfEven inc
 ifEvenDouble = genIfEven double
 ifEvenSquare = genIfEven square
+
+-- Quick check 5.1
+genIfXEven x = (\f -> ifEven f x)
