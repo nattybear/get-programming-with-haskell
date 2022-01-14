@@ -5,3 +5,6 @@ getRequestURL host apiKey resource id = host ++
                                         id ++
                                         "?token=" ++
                                         apiKey
+
+genHostRequestBuilder host = (\apiKey resource id ->
+                               getRequestURL host apiKey resource id)
