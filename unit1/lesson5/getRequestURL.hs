@@ -11,9 +11,6 @@ genHostRequestBuilder host = (\apiKey resource id ->
 
 exampleUrlBuilder = getRequestUrl "http://example.com"
 
-genApiRequestBuilder hostBuilder apiKey = (\resource id ->
-                                            hostBuilder apiKey resource id)
-
 myExampleUrlBuilder = exampleUrlBuilder "1337hAsk3ll"
 
 -- Quick check 5.2
