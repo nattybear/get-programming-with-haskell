@@ -5,3 +5,5 @@ addXto3 x = (\b c d ->
 
 addXYto2 x y = (\c d ->
                  add4 x y c d)
+
+mystery = add4 3
