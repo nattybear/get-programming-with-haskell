@@ -23,3 +23,8 @@ getLocationFunction location = case location of
   "sf" -> sfOffice
   "reno" -> renoOffice
   _ -> (\name -> (fst name) ++ " " ++ (snd name))
+
+addressLetterV2 = flipBinaryArgs addressLetter
+addressLetterNY = addressLetterV2 "ny"
+
+flipBinaryArgs binaryFunction = (\x y -> binaryFunction y x)
