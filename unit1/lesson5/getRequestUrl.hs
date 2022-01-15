@@ -17,3 +17,6 @@ myExampleUrlBuilder = exampleUrlBuilder "1337hAsk3ll"
 genApiRequestBuilder hostBuilder apiKey resource = (\id ->
                                                      hostBuilder apiKey
                                                      resource id)
+
+-- Quick check 5.3
+exampleBuilder = getRequestUrl "http://example.com" "1337hAsk3ll" "books"
