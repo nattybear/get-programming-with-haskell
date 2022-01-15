@@ -7,7 +7,7 @@ getRequestUrl host apiKey resource id = host ++
                                         apiKey
 
 genHostRequestBuilder host = (\apiKey resource id ->
-                               getRequestURL host apiKey resource id)
+                               getRequestUrl host apiKey resource id)
 
 exampleUrlBuilder = getRequestUrl "http://example.com"
 
