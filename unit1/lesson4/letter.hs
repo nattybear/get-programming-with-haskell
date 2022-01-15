@@ -26,4 +26,4 @@ getLocationFunction location = case location of
 
 addressLetterV2 location name = addressLetter name location
 
-flipBinaryArgs binaryFunction = (\x y -> binaryFunction y s)
+flipBinaryArgs binaryFunction = (\x y -> binaryFunction y x)
