@@ -7,3 +7,5 @@ addXYto2 x y = (\c d ->
                  add4 x y c d)
 
 mystery = add4 3
+
+anotherMystery = add4 2 3
