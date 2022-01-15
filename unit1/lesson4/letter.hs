@@ -25,3 +25,5 @@ getLocationFunction location = case location of
   _ -> (\name -> (fst name) ++ " " ++ (snd name))
 
 addressLetterV2 location name = addressLetter name location
+
+flipBinaryArgs binaryFunction = (\x y -> binaryFunction y s)
