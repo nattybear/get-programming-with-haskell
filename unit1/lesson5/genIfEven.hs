@@ -10,9 +10,9 @@ square n = n * n
 
 genIfEven f = (\x -> ifEven f x)
 
-ifEvenInc = genIfEven inc
-ifEvenDouble = genIfEven double
-ifEvenSquare = genIfEven square
+ifEvenInc = ifEven inc
+ifEvenDouble = ifEven double
+ifEvenSquare = ifEven square
 
 -- Quick check 5.1
 genIfXEven x = (\f -> ifEven f x)
