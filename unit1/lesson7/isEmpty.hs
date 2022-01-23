@@ -1,2 +1,2 @@
 isEmpty [] = True
-isEmpty aList = False
+isEmpty _ = False
