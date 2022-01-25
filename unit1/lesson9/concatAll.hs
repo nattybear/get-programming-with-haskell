@@ -1,0 +1,1 @@
+concatAll xs = foldl (++) "" xs
