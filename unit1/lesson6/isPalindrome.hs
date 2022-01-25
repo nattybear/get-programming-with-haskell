@@ -1,5 +1,5 @@
-import Data.Char (toUpper)
+import Data.Char (toLower)
 
-isPalindrome word = word'' == reverse word''
-  where word' = map toUpper word
-        word'' = filter (/=' ') word'
+isPalindrome text = processedText == reverse processedText
+  where noSpaces = filter (/= ' ') text
+        processedText = map toLower noSpaces

@@ -1,5 +1,5 @@
-import Data.Ratio
-
-harmonic :: Int -> Ratio Int
-harmonic n = sum ns
-  where ns = map (1 %) [1..n]
+harmonic n = sum (take n seriesValues)
+  where seriesPairs = zip (cycle [1.0]) [1.0,2.0 ..]
+        seriesValues = map
+                       (\pair -> (fst pair) / (snd pair))
+                       seriesPairs
