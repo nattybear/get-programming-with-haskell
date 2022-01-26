@@ -21,3 +21,6 @@ softerRobot = setHP killerRobot 50
 printRobot aRobot = aRobot (\(n,a,h) -> n ++
                                         " attack:" ++ (show a) ++
                                         " hp:" ++ (show h))
+
+damage aRobot attackDamage = aRobot (\(n,a,h) ->
+                                      robot (n,a,h-attackDamage))
