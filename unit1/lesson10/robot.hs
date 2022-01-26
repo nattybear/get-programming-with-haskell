@@ -24,3 +24,8 @@ printRobot aRobot = aRobot (\(n,a,h) -> n ++
 
 damage aRobot attackDamage = aRobot (\(n,a,h) ->
                                       robot (n,a,h-attackDamage))
+
+fight aRobot defender = damage defender attack
+  where attack = if getHP aRobot > 10
+                 then getAttack aRobot
+                 else 0
