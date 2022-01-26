@@ -5,3 +5,7 @@ killerRobot = robot ("Kill3r",25,200)
 name (n,_,_) = n
 attack (_,a,_) = a
 hp (_,_,hp) = hp
+
+getName aRobot = aRobot name
+getAttack aRobot = aRobot attack
+getHp aRobot = aRobot hp
