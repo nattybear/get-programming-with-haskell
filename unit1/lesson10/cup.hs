@@ -1,1 +1,1 @@
-cup f10z = \_ -> f10z
+cup f10z = \message -> message f10z
