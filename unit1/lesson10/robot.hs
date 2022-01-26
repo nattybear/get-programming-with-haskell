@@ -17,3 +17,7 @@ setHP aRobot newHP = aRobot (\(n,a,h) -> robot (n,a,newHP))
 nicerRobot = setName killerRobot "kitty"
 gentlerRobot = setAttack killerRobot 5
 softerRobot = setHP killerRobot 50
+
+printRobot aRobot = aRobot (\(n,a,h) -> n ++
+                                        " attack:" ++ (show a) ++
+                                        " hp:" ++ (show h))
