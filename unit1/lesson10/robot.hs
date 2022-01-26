@@ -29,3 +29,5 @@ fight aRobot defender = damage defender attack
   where attack = if getHP aRobot > 10
                  then getAttack aRobot
                  else 0
+
+gentleGiant = robot ("Mr. Friendly", 10, 300)
