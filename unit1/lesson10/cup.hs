@@ -1,3 +1,3 @@
-cup f10z = \message -> message f10z
+cup flOz = \message -> message flOz
 
 coffeeCup = cup 12
