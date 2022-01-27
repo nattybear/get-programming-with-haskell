@@ -48,3 +48,11 @@ fastRobotRound1 = fight slowRobotRound1 fastRobot
 slowRobotRound2 = fight fastRobotRound1 slowRobotRound1
 slowRobotRound3 = fight fastRobotRound2 slowRobotRound2
 slowRobotRound1 = fight fastRobot slowRobot
+
+lifes = map getHP [fastRobot, slowRobot]
+
+robots = [fastRobot, slowRobot, killerRobot]
+
+newRobots = map (fight nicerRobot) robots
+
+remainingLifes = map getHP newRobots
