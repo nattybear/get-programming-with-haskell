@@ -8,4 +8,8 @@ anotherNumber :: Int
 anotherNumber = read "6"
 
 makeAddress :: Int -> String -> String -> (Int, String, String)
-makeAddress number street town = (number,stree,town)
+makeAddress number street town = (number,street,town)
+
+makeAddressLambda = (\number ->
+                     (\street ->
+                      (\town -> (number, street, town))))
