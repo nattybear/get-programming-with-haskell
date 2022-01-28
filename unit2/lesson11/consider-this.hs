@@ -1,1 +1,1 @@
-myAverage aList = sum aList / length aList
+myAverage aList = sum aList / fromIntegral (length aList)
