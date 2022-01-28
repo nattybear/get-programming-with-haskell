@@ -6,3 +6,6 @@ half n = (fromIntegral n) / 2
 
 anotherNumber :: Int
 anotherNumber = read "6"
+
+makeAddress :: Int -> String -> String -> (Int, String, String)
+makeAddress number street town = (number,stree,town)
