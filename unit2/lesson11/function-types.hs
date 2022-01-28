@@ -13,3 +13,8 @@ makeAddress number street town = (number,street,town)
 makeAddressLambda = (\number ->
                      (\street ->
                       (\town -> (number, street, town))))
+
+ifEven :: (Int -> Int) -> Int -> Int
+ifEven f n = if even n
+             then f n
+             else n
