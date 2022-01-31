@@ -10,6 +10,8 @@ data RhType = Pos | Neg
 
 data ABOType = A | B | AB | O
 
+data BloodType = BloodType ABOType RhType
+
 patientInfo :: PatientName -> Age -> Height -> String
 patientInfo patientName age height = name ++ " " ++ ageHeight
   where name = lname ++ ", " ++ fname
