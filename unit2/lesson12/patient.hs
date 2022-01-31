@@ -16,7 +16,12 @@ data ABOType = A | B | AB | O
 
 data BloodType = BloodType ABOType RhType
 
-data Patient = Patient Name Sex Int Int Int BloodType
+data Patient = Patient { name      :: Name
+                       , sex       :: Sex
+                       , age       :: Int
+                       , height    :: Int
+                       , weight    :: Int
+                       , bloodType :: BloodType }
 
 patientInfo :: PatientName -> Age -> Height -> String
 patientInfo patientName age height = name ++ " " ++ ageHeight
