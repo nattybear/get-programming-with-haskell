@@ -74,6 +74,11 @@ canDonateTo (BloodType A _) (BloodType A _)  = True
 canDonateTo (BloodType B _) (BloodType B _)  = True
 canDonateTo _               _                = False
 
+canDonateTo' :: Patient -> Patient -> Bool
+canDonateTo' p1 p2 = canDonateTo bt1 bt2
+  where bt1 = bloodType p1
+        bt2 = bloodType p2
+
 showName :: Name -> String
 showName (Name f l) = f ++ " " ++ l
 showName (NameWithMiddle f m l) = f ++ " " ++ m ++ " " ++ l
