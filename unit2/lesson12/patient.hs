@@ -55,3 +55,10 @@ showABO O = "O"
 
 showBloodType :: BloodType -> String
 showBloodType (BloodType abo rh) = showABO abo ++ showRh rh
+
+canDonateTo :: BloodType -> BloodType -> Bool
+canDonateTo (BloodType O _) _                = True
+canDonateTo _               (BloodType AB _) = True
+canDonateTo (BloodType A _) (BloodType A _)  = True
+canDonateTo (BloodType B _) (BloodType B _)  = True
+canDonateTo _               _                = False
