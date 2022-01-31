@@ -70,3 +70,6 @@ canDonateTo _               _                = False
 showName :: Name -> String
 showName (Name f l) = f ++ " " ++ l
 showName (NameWithMiddle f m l) = f ++ " " ++ m ++ " " ++ l
+
+name1 = Name "Jerome" "Salinger"
+name2 = NameWithMiddle "Jerome" "David" "Salinger"
