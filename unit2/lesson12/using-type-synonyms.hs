@@ -4,10 +4,12 @@ type Age = Int
 type Height = Int
 type PatientName = (String,String)
 
-patientInfo :: FirstName -> LastName -> Age -> Height -> String
-patientInfo fname lname age height = name ++ " " ++ ageHeight
+patientInfo :: PatientName -> Age -> Height -> String
+patientInfo patientName age height = name ++ " " ++ ageHeight
   where name = lname ++ ", " ++ fname
         ageHeight = "(" ++ show age ++ "yrs. " ++ show height ++ "in.)"
+        fname = firstName patientName
+        lname = lastName patientName
 
 firstName :: PatientName -> String
 firstName patient = fst patient
