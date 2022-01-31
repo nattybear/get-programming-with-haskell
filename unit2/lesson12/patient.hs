@@ -104,3 +104,5 @@ jackieSmith = Patient { name = Name "Jackie" "Smith"
                       , height = 62
                       , weight = 115
                       , bloodType = BloodType O Neg }
+
+jackeSmithUpdated = jackieSmith { age = 44 }
