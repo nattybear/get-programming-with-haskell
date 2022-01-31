@@ -96,3 +96,11 @@ getAge (Patient _ _ a _ _ _) = a
 
 getBloodType :: Patient -> BloodType
 getBloodType (Patient _ _ _ _ _ bt) = bt
+
+jackieSmith :: Patient
+jackieSmith = Patient { name = Name "Jackie" "Smith"
+                      , age = 43
+                      , sex = Female
+                      , height = 62
+                      , weight = 115
+                      , bloodType = BloodType O Neg }
