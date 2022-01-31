@@ -23,3 +23,7 @@ firstName patient = fst patient
 
 lastName :: PatientName -> String
 lastName patient = snd patient
+
+sexInitial :: Sex -> Char
+sexInitial Male   = 'M'
+sexInitial Female = 'F'
