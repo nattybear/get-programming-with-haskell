@@ -82,3 +82,12 @@ johnDoe = Patient (Name "John" "Doe") Male 30 74 200 (BloodType AB Pos)
 janeESmith :: Patient
 janeESmith = Patient (NameWithMiddle "Jane" "Elizabeth" "Smith")
                      Female 28 62 140 (BloodType B Pos)
+
+getName :: Patient -> Name
+getName (Patient n _ _ _ _ _) = n
+
+getAge :: Patient -> Int
+getAge (Patient _ _ a _ _ _) = a
+
+getBloodType :: Patient -> BloodType
+getBloodType (Patient _ _ _ _ _ bt) = bt
