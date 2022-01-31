@@ -67,6 +67,10 @@ showABO O = "O"
 showBloodType :: BloodType -> String
 showBloodType (BloodType abo rh) = showABO abo ++ showRh rh
 
+showSex :: Sex -> String
+showSex Male   = "Male"
+showSex Female = "Female"
+
 canDonateTo :: BloodType -> BloodType -> Bool
 canDonateTo (BloodType O _) _                = True
 canDonateTo _               (BloodType AB _) = True
@@ -111,3 +115,13 @@ jackieSmith = Patient { name = Name "Jackie" "Smith"
                       , bloodType = BloodType O Neg }
 
 jackeSmithUpdated = jackieSmith { age = 44 }
+
+patientSummary :: Patient -> String
+patientSummary patient = "**************" ++ "\n"
+                      ++ "Patient Name: " ++ showName (name patient) ++ "\n"
+                      ++ "Sex: " ++ showSex (sex patient) ++ "\n"
+                      ++ "Age: " ++ show (age patient) ++ "\n"
+                      ++ "Height: " ++ show (height patient) ++ " in." ++ "\n"
+                      ++ "Weight: " ++ show (weight patient) ++ " lbs." ++ "\n"
+                      ++ "Blood Type: " ++ showBloodType (bloodType patient) ++ "\n"
+                      ++ "**************" ++ "\n"
