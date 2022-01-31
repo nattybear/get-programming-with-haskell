@@ -66,3 +66,7 @@ canDonateTo _               (BloodType AB _) = True
 canDonateTo (BloodType A _) (BloodType A _)  = True
 canDonateTo (BloodType B _) (BloodType B _)  = True
 canDonateTo _               _                = False
+
+showName :: Name -> String
+showName (Name f l) = f ++ " " ++ l
+showName (NameWithMiddle f m l) = f ++ " " ++ m ++ " " ++ l
