@@ -3,6 +3,10 @@ type LastName = String
 type Age = Int
 type Height = Int
 type PatientName = (String,String)
+type MiddleName = String
+
+data Name = Name FirstName LastName
+          | NameWithMiddle FirstName MiddleName LastName
 
 data Sex = Male | Female
 
