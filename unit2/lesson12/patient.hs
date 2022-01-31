@@ -33,3 +33,12 @@ lastName patient = snd patient
 sexInitial :: Sex -> Char
 sexInitial Male   = 'M'
 sexInitial Female = 'F'
+
+patient1BT :: BloodType
+patient1BT = BloodType A Pos
+
+patient2BT :: BloodType
+patient2BT = BloodType O Neg
+
+patient3BT :: BloodType
+patient3BT = BloodType AB Pos
