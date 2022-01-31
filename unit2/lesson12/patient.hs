@@ -75,3 +75,6 @@ showName (NameWithMiddle f m l) = f ++ " " ++ m ++ " " ++ l
 
 name1 = Name "Jerome" "Salinger"
 name2 = NameWithMiddle "Jerome" "David" "Salinger"
+
+johnDoe :: Patient
+johnDoe = Patient (Name "John" "Doe") Male 30 74 200 (BloodType AB Pos)
