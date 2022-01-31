@@ -78,3 +78,7 @@ name2 = NameWithMiddle "Jerome" "David" "Salinger"
 
 johnDoe :: Patient
 johnDoe = Patient (Name "John" "Doe") Male 30 74 200 (BloodType AB Pos)
+
+janeESmith :: Patient
+janeESmith = Patient (NameWithMiddle "Jane" "Elizabeth" "Smith")
+                     Female 28 62 140 (BloodType B Pos)
