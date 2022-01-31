@@ -4,6 +4,8 @@ type Age = Int
 type Height = Int
 type PatientName = (String,String)
 
+data Sex = Male | Female
+
 patientInfo :: PatientName -> Age -> Height -> String
 patientInfo patientName age height = name ++ " " ++ ageHeight
   where name = lname ++ ", " ++ fname
