@@ -1,1 +1,1 @@
-data Icecream = Chocolate | Vanilla
+data Icecream = Chocolate | Vanilla deriving (Show)
