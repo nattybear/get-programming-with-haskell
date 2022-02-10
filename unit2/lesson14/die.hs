@@ -24,3 +24,6 @@ instance Ord SixSidedDie where
   compare S5 S5 = EQ
   compare S5 _  = GT
   compare _  S5 = LT
+  compare S4 S4 = EQ
+  compare S4 _  = GT
+  compare _  S4 = LT
