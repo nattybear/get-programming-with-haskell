@@ -9,3 +9,7 @@ rotN alphabetSize c = toEnum rotation
 
 largestCharNumber :: Int
 largestCharNumber = fromEnum (maxBound :: Char)
+
+rotChar :: Char -> Char
+rotChar charToEncrypt = rotN sizeOfAlphabet charToEncrypt
+  where sizeOfAlphabet = 1 + fromEnum (maxBound :: Char)
