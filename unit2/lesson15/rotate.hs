@@ -21,3 +21,15 @@ fourLetterAlphabetEncoder :: [FourLetterAlphabet] -> [FourLetterAlphabet]
 fourLetterAlphabetEncoder vals = map rot4l vals
   where alphaSize = 1 + fromEnum (maxBound :: FourLetterAlphabet)
         rot4l = rotN alphaSize
+
+data ThreeLetterAlphabet = Alpha
+                         | Beta
+                         | Kappa deriving (Show,Enum,Bounded)
+
+threeLetterMessage :: [ThreeLetterAlphabet]
+threeLetterMessage = [Alpha,Alpha,Beta,Alpha,Kappa]
+
+threeLetterEncoder :: [ThreeLetterAlphabet] -> [ThreeLetterAlphabet]
+threeLetterEncoder vals = map rot3l vals
+  where alphaSize = 1 + fromEnum (maxBound :: ThreeLetterAlphabet)
+        rot3l = rotN alphaSize
