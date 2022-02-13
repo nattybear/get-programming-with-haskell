@@ -1,6 +1,10 @@
 data FourLetterAlphabet = L1 | L2 | L3 | L4
   deriving (Show,Enum,Bounded)
 
+data ThreeLetterAlphabet = Alpha
+                         | Beta
+                         | Kappa deriving (Show,Enum,Bounded)
+
 rotN :: (Bounded a, Enum a) => Int -> a -> a
 rotN alphabetSize c = toEnum rotation
   where halfAlphabet = alphabetSize `div` 2
@@ -17,13 +21,8 @@ rotChar charToEncrypt = rotN sizeOfAlphabet charToEncrypt
 message :: [FourLetterAlphabet]
 message = [L1,L3,L4,L1,L1,L2]
 
-data ThreeLetterAlphabet = Alpha
-                         | Beta
-                         | Kappa deriving (Show,Enum,Bounded)
-
 threeLetterMessage :: [ThreeLetterAlphabet]
 threeLetterMessage = [Alpha,Alpha,Beta,Alpha,Kappa]
-
 
 rotNdecoder :: (Bounded a, Enum a) => Int -> a -> a
 rotNdecoder n c = toEnum rotation
@@ -32,7 +31,6 @@ rotNdecoder n c = toEnum rotation
                  then fromEnum c + halfN
                  else 1 + fromEnum c + halfN
         rotation = offset `mod` n
-
 
 rotEncoder :: String -> String
 rotEncoder text = map rotChar text
