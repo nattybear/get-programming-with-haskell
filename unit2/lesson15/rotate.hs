@@ -1,9 +1,17 @@
 data FourLetterAlphabet = L1 | L2 | L3 | L4
   deriving (Show,Enum,Bounded)
 
-data ThreeLetterAlphabet = Alpha
-                         | Beta
-                         | Kappa deriving (Show,Enum,Bounded)
+data ThreeLetterAlphabet = Alpha | Beta | Kappa
+  deriving (Show,Enum,Bounded)
+
+largestCharNumber :: Int
+largestCharNumber = fromEnum (maxBound :: Char)
+
+fourLetterMessage :: [FourLetterAlphabet]
+fourLetterMessage = [L1,L3,L4,L1,L1,L2]
+
+threeLetterMessage :: [ThreeLetterAlphabet]
+threeLetterMessage = [Alpha,Alpha,Beta,Alpha,Kappa]
 
 rotN :: (Bounded a, Enum a) => Int -> a -> a
 rotN alphabetSize c = toEnum rotation
@@ -11,18 +19,12 @@ rotN alphabetSize c = toEnum rotation
         offset = fromEnum c + halfAlphabet
         rotation = offset `mod` alphabetSize
 
-largestCharNumber :: Int
-largestCharNumber = fromEnum (maxBound :: Char)
-
 rotChar :: Char -> Char
 rotChar charToEncrypt = rotN sizeOfAlphabet charToEncrypt
   where sizeOfAlphabet = 1 + fromEnum (maxBound :: Char)
 
-message :: [FourLetterAlphabet]
-message = [L1,L3,L4,L1,L1,L2]
-
-threeLetterMessage :: [ThreeLetterAlphabet]
-threeLetterMessage = [Alpha,Alpha,Beta,Alpha,Kappa]
+rotEncoder :: String -> String
+rotEncoder = map rotChar
 
 rotNdecoder :: (Bounded a, Enum a) => Int -> a -> a
 rotNdecoder n c = toEnum rotation
@@ -31,11 +33,6 @@ rotNdecoder n c = toEnum rotation
                  then fromEnum c + halfN
                  else 1 + fromEnum c + halfN
         rotation = offset `mod` n
-
-rotEncoder :: String -> String
-rotEncoder text = map rotChar text
-  where alphaSize = 1 + fromEnum (maxBound :: Char)
-        rotChar = rotN alphaSize
 
 rotDecoder :: String -> String
 rotDecoder text = map rotCharDecoder text
