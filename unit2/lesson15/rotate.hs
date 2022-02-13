@@ -54,8 +54,8 @@ threeLetterDecoder vals = map rot3ldecoder vals
   where alphaSize = 1 + fromEnum (maxBound :: ThreeLetterAlphabet)
         rot3ldecoder = rotNdecoder alphaSize
 
-fourLetterAlphabetEncoder :: [FourLetterAlphabet] -> [FourLetterAlphabet]
-fourLetterAlphabetEncoder vals = map rot4l vals
+fourLetterEncoder :: [FourLetterAlphabet] -> [FourLetterAlphabet]
+fourLetterEncoder vals = map rot4l vals
   where alphaSize = 1 + fromEnum (maxBound :: FourLetterAlphabet)
         rot4l = rotN alphaSize
 
