@@ -1,3 +1,5 @@
+module Bits where
+
 type Bits = [Bool]
 
 intToBits' :: Int -> Bits
