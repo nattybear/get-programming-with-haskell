@@ -29,3 +29,6 @@ applyOTP pad plaintext = map bitsToChar bitList
 
 encoderDecoder :: String -> String
 encoderDecoder = applyOTP myPad
+
+myOTP :: OneTimePad
+myOTP = OTP (cycle [minBound .. maxBound])
