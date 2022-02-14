@@ -17,3 +17,6 @@ intToBits n = leadingFalses ++ reversedBits
   where reversedBits = reverse (intToBits' n)
         missingBits = maxBits - (length reversedBits)
         leadingFalses = take missingBits (cycle [False])
+
+charToBits :: Char -> Bits
+charToBits char = intToBits (fromEnum char)
