@@ -27,3 +27,6 @@ bitsToInt bits = sum (map (\x -> 2^(snd x)) trueLocations)
         indices = [size-1,size-2 .. 0]
         trueLocations = filter (\x -> fst x == True)
                         (zip bits indices)
+
+bitsToChar :: Bits -> Char
+bitsToChar bits = toEnum (bitsToInt bits)
