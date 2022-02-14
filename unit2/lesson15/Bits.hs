@@ -20,3 +20,10 @@ intToBits n = leadingFalses ++ reversedBits
 
 charToBits :: Char -> Bits
 charToBits char = intToBits (fromEnum char)
+
+bitsToInt :: Bits -> Int
+bitsToInt bits = sum (map (\x -> 2^(snd x)) trueLocations)
+  where size = length bits
+        indices = [size-1,size-2 .. 0]
+        trueLocations = filter (\x -> fst x == True)
+                        (zip bits indices)
