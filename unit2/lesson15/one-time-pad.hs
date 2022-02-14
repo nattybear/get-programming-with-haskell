@@ -13,3 +13,7 @@ applyOTP' pad plaintext = map (\pair ->
                           (zip padBits plaintextBits)
   where padBits = map charToBits pad
         plaintextBits = map charToBits plaintext
+
+applyOTP :: String -> String -> String
+applyOTP pad plaintext = map bitsToChar bitList
+  where bitList = applyOTP' pad plaintext
