@@ -17,3 +17,6 @@ applyOTP' pad plaintext = map (\pair ->
 applyOTP :: String -> String -> String
 applyOTP pad plaintext = map bitsToChar bitList
   where bitList = applyOTP' pad plaintext
+
+encoderDecoder :: String -> String
+encoderDecoder = applyOTP myPad
