@@ -1,3 +1,13 @@
+module Rot where
+
+import Cipher
+
+data Rot = Rot
+
+instance Cipher Rot where
+  encode Rot text = rotEncoder text
+  decode Rot text = rotEncoder text
+
 data FourLetterAlphabet = L1 | L2 | L3 | L4
   deriving (Show,Enum,Bounded)
 
