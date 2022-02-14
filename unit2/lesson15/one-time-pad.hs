@@ -1,5 +1,15 @@
+import Bits
+import Xor
+
 myPad :: String
 myPad = "Shhhhhh"
 
 myPlainText :: String
 myPlainText = "Haskell"
+
+applyOTP' :: String -> String -> [Bits]
+applyOTP' pad plaintext = map (\pair ->
+                                (fst pair) `xor` (snd pair))
+                          (zip padBits plaintextBits)
+  where padBits = map charToBits pad
+        plaintextBits = map charToBits plaintext
