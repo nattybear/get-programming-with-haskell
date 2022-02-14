@@ -1,9 +1,14 @@
 module OneTimePad where
 
 import Bits
+import Cipher
 import Xor
 
 data OneTimePad = OTP String
+
+instance Cipher OneTimePad where
+  encode (OTP pad) text = applyOTP pad text
+  decode (OTP pad) text = applyOTP pad text
 
 myPad :: String
 myPad = "Shhhhhh"
