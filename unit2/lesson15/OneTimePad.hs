@@ -1,5 +1,9 @@
+module OneTimePad where
+
 import Bits
 import Xor
+
+data OneTimePad = OTP String
 
 myPad :: String
 myPad = "Shhhhhh"
