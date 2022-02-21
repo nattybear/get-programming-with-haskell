@@ -5,11 +5,12 @@ data AuthorName = AuthorName {
   , last  :: String}
 
 data Book = Book {
-    author :: AuthorName
+    author :: Creator
   , isbn   :: String
   , title  :: String
   , year   :: Int
-  , price  :: Double}
+  , price  :: Double
+  }
 
 data Creator
   = AuthorCreator Author
