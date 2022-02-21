@@ -1,7 +1,4 @@
-public class Book {
+public class Book extends StoreItem {
   Author author;
   String isbn;
-  String title;
-  int yearPublished;
-  double price;
 }

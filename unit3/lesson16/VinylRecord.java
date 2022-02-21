@@ -1,6 +1,3 @@
-public class VinylRecord {
+public class VinylRecord extends StoreItem {
   String artist;
-  String title;
-  int yearPublished;
-  double price;
 }
