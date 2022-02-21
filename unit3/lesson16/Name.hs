@@ -8,3 +8,4 @@ data Name
   = Name FirstName LastName
   | NameWithMiddle FirstName MiddleName LastName  
   | TwoInitialsWithLast Char Char LastName
+  | FirstNameWithTwoInits FirstName Char Char
