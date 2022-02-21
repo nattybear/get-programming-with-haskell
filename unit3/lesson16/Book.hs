@@ -19,6 +19,12 @@ data VinylRecord = VinylRecord {
   , recordPrice :: Double
   }
 
+data CollectibleToy = CollectibleToy {
+    name        :: String
+  , description :: String
+  , toyPrice    :: Double
+  }
+
 data StoreItem
   = BookItem Book
   | RecordItem VinylRecord
