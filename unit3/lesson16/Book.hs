@@ -19,6 +19,10 @@ data VinylRecord = VinylRecord {
   , recordPrice :: Double
   }
 
+data StoreItem
+  = BookItem Book
+  | RecordItem VinylRecord
+
 data Creator
   = AuthorCreator Author
   | ArtistCreator Artist
