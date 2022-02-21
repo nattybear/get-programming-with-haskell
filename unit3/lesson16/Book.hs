@@ -12,6 +12,13 @@ data Book = Book {
   , price  :: Double
   }
 
+data VinylRecord = VinylRecord {
+    artist      :: Creator
+  , recordTitle :: String
+  , recordYear  :: Int
+  , recordPrice :: Double
+  }
+
 data Creator
   = AuthorCreator Author
   | ArtistCreator Artist
