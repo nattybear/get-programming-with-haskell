@@ -20,3 +20,8 @@ data Author = Author Name
 data Artist
   = Person Name
   | Band String
+
+hpLovecraft :: Creator
+hpLovecraft = AuthorCreator
+                (Author
+                  (TwoInitialsWithLast 'H' 'P' "Lovecraft"))
