@@ -4,6 +4,7 @@ data StoreItem
   = BookItem Book
   | RecordItem VinylRecord
   | ToyItem CollectibleToy
+  | PamphletItem Pamphlet
 
 data Book = Book {
     author    :: Creator
@@ -21,9 +22,15 @@ data VinylRecord = VinylRecord {
   }
 
 data CollectibleToy = CollectibleToy {
-    name        :: String
-  , description :: String
-  , toyPrice    :: Double
+    name           :: String
+  , toyDescription :: String
+  , toyPrice       :: Double
+  }
+
+data Pamphlet = Pamphlet {
+    title               :: String
+  , pamphletDescription :: String
+  , contact             :: String
   }
 
 hpLovecraft :: Creator
@@ -35,6 +42,7 @@ price :: StoreItem -> Double
 price (BookItem book) = bookPrice book
 price (RecordItem record) = recordPrice record
 price (ToyItem toy) = toyPrice toy
+price (PamphletItem _) = 0
 
 madeBy :: StoreItem -> String
 madeBy (BookItem book) = show $ author book
