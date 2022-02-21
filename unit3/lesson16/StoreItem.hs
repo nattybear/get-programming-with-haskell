@@ -1,8 +1,9 @@
-import Name
+import Creator
 
-data AuthorName = AuthorName {
-    first :: String
-  , last  :: String}
+data StoreItem
+  = BookItem Book
+  | RecordItem VinylRecord
+  | ToyItem CollectibleToy
 
 data Book = Book {
     author    :: Creator
@@ -24,24 +25,6 @@ data CollectibleToy = CollectibleToy {
   , description :: String
   , toyPrice    :: Double
   }
-
-data StoreItem
-  = BookItem Book
-  | RecordItem VinylRecord
-  | ToyItem CollectibleToy
-
-data Creator
-  = AuthorCreator Author
-  | ArtistCreator Artist
-  deriving Show
-
-data Author = Author Name
-  deriving Show
-
-data Artist
-  = Person Name
-  | Band String
-  deriving Show
 
 hpLovecraft :: Creator
 hpLovecraft = AuthorCreator
