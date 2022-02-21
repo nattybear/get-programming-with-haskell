@@ -33,12 +33,15 @@ data StoreItem
 data Creator
   = AuthorCreator Author
   | ArtistCreator Artist
+  deriving Show
 
 data Author = Author Name
+  deriving Show
 
 data Artist
   = Person Name
   | Band String
+  deriving Show
 
 hpLovecraft :: Creator
 hpLovecraft = AuthorCreator
