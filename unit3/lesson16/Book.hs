@@ -1,4 +1,6 @@
-data AuthorName = AuthorName String String
+data AuthorName = AuthorName {
+    first :: String
+  , last  :: String}
 
 data Book = Book {
     author :: AuthorName
