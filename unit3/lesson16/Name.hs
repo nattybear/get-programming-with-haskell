@@ -1,3 +1,5 @@
+module Name where
+
 type FirstName = String
 type LastName = String
 type MiddleName = String
