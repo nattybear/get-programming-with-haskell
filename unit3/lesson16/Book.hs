@@ -1,3 +1,3 @@
 data AuthorName = AuthorName String String
 
-data Book = Author String String Int
+data Book = Book Author String String Int
