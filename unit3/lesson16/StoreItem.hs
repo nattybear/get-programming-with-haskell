@@ -35,3 +35,8 @@ price :: StoreItem -> Double
 price (BookItem book) = bookPrice book
 price (RecordItem record) = recordPrice record
 price (ToyItem toy) = toyPrice toy
+
+madeBy :: StoreItem -> String
+madeBy (BookItem book) = show $ author book
+madeBy (RecordItem record) = show $ artist record
+madeBy _ = "unknown"
