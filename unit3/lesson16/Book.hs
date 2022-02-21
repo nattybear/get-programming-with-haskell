@@ -28,6 +28,7 @@ data CollectibleToy = CollectibleToy {
 data StoreItem
   = BookItem Book
   | RecordItem VinylRecord
+  | ToyItem CollectibleToy
 
 data Creator
   = AuthorCreator Author
