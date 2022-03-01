@@ -10,3 +10,7 @@ createPTable events probs = PTable events normalizedProbs
 
 showPair :: String -> Double -> String
 showPair event prob = mconcat [event, "|", show prob, "\n"]
+
+instance Show PTable where
+  show (PTable events probs) = mconcat pairs
+    where pairs = zipWith showPair events probs
