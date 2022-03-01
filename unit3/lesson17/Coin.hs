@@ -28,3 +28,10 @@ combineEvents e1 e2 = cartCombine combiner e1 e2
 
 combineProbs :: Probs -> Probs -> Probs
 combineProbs p1 p2 = cartCombine (*) p1 p2
+
+instance Semigroup PTable where
+  (<>) ptable1 (PTable [] []) = ptable1
+  (<>) (PTable [] []) ptable2 = ptable2
+  (<>) (PTable e1 p1) (PTable e2 p2) = createPTable newEvents newProbs
+    where newEvents = combineEvents e1 e2
+          newProbs = combineProbs p1 p2
