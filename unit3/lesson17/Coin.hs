@@ -39,3 +39,9 @@ instance Semigroup PTable where
 instance Monoid PTable where
   mempty = PTable [] []
   mappend = (<>)
+
+coin :: PTable
+coin = createPTable ["heads","tails"] [0.5,0.5]
+
+spinner :: PTable
+spinner = createPTable ["red","blue","green"] [0.1,0.2,0.7]
