@@ -35,3 +35,7 @@ instance Semigroup PTable where
   (<>) (PTable e1 p1) (PTable e2 p2) = createPTable newEvents newProbs
     where newEvents = combineEvents e1 e2
           newProbs = combineProbs p1 p2
+
+instance Monoid PTable where
+  mempty = PTable [] []
+  mappend = (<>)
