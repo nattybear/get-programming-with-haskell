@@ -55,3 +55,5 @@ ourListEx2 = Cons 'c' (Cons 'a' (Cons 't' Empty))
 ourMap :: (a -> b) -> List a -> List b
 ourMap _ Empty = Empty
 ourMap func (Cons a rest) = Cons (func a) (ourMap func rest)
+
+-- data (,) a b = (,) a b
