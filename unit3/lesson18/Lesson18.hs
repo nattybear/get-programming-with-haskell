@@ -85,3 +85,9 @@ organPairs = zip ids organs
 
 organCatalog :: Map.Map Int Organ
 organCatalog = Map.fromList organPairs
+
+tripleMap :: (a -> b) -> Triple a -> Triple b
+tripleMap f (Triple x y z) = Triple (f x) (f y) (f z)
+
+boxMap :: (a -> b) -> Box a -> Box b
+boxMap f (Box x) = Box (f x)
