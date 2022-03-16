@@ -73,3 +73,6 @@ itemInventory :: [(String,Int)]
 itemInventory = [itemCount1, itemCount2, itemCount3]
 
 data Organ = Heart | Brain | Kidney | Spleen deriving (Show, Eq)
+
+organs :: [Organ]
+organs = [Heart,Heart,Brain,Spleen,Spleen,Kidney]
