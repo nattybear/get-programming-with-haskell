@@ -17,3 +17,8 @@ type FullName = Triple String
 
 aPerson :: FullName
 aPerson = Triple "Howard" "Phillips" "Lovecraft"
+
+type Initials = Triple Char
+
+initials :: Initials
+initials = Triple 'H' 'P' 'L'
