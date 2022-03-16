@@ -31,3 +31,6 @@ second (Triple _ x _) = x
 
 third :: Triple a -> a
 third (Triple _ _ x) = x
+
+toList :: Triple a -> [a]
+toList (Triple x y z) = [x, y, z]
