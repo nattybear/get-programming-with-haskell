@@ -34,3 +34,6 @@ third (Triple _ _ x) = x
 
 toList :: Triple a -> [a]
 toList (Triple x y z) = [x, y, z]
+
+transform :: (a -> a) -> Triple a -> Triple a
+transform f (Triple x y z) = Triple (f x) (f y) (f z)
