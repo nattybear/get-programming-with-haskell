@@ -51,3 +51,7 @@ builtinEx2 = 'c':'a':'t':[]
 
 ourListEx2 :: List Char
 ourListEx2 = Cons 'c' (Cons 'a' (Cons 't' Empty))
+
+ourMap :: (a -> b) -> List a -> List b
+ourMap _ Empty = Empty
+ourMap func (Cons a rest) = Cons (func a) (ourMap func rest)
