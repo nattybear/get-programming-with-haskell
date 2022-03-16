@@ -1,3 +1,5 @@
+import qualified Data.Map as Map
+
 data Box a = Box a deriving Show
 
 wrap :: a -> Box a
