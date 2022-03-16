@@ -82,3 +82,6 @@ ids = [2,7,13,14,21,24]
 
 organPairs :: [(Int,Organ)]
 organPairs = zip ids organs
+
+organCatalog :: Map.Map Int Organ
+organCatalog = Map.fromList organPairs
