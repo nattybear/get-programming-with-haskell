@@ -72,7 +72,7 @@ itemCount3 = ("Pens",13)
 itemInventory :: [(String,Int)]
 itemInventory = [itemCount1, itemCount2, itemCount3]
 
-data Organ = Heart | Brain | Kidney | Spleen deriving (Show, Eq)
+data Organ = Heart | Brain | Kidney | Spleen deriving (Show, Eq, Ord)
 
 organs :: [Organ]
 organs = [Heart,Heart,Brain,Spleen,Spleen,Kidney]
@@ -91,3 +91,6 @@ tripleMap f (Triple x y z) = Triple (f x) (f y) (f z)
 
 boxMap :: (a -> b) -> Box a -> Box b
 boxMap f (Box x) = Box (f x)
+
+organInventory :: Map.Map Organ Int
+organInventory = foldr (\k mp -> Map.insertWith (+) k 1 mp) Map.empty organs
