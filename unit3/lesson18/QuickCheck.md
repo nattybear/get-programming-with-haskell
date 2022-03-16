@@ -14,3 +14,9 @@ map :: (a -> b) -> [a] -> [b]
 ### What would happen if you tried to add `("Paper",12.4)` to your inventory?
 
 It would cause an error because the rest of your pairs are `(String,Int)`, and `("Paper",12.4)` would be a `(String,Double)`.
+
+### What's the kind of `(,,)`?
+
+```haskell
+(,,) :: * -> * -> * -> *
+```
