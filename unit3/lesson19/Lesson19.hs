@@ -18,3 +18,5 @@ organPairs = zip ids organs
 
 organCatalog :: Map.Map Int Organ
 organCatalog = Map.fromList organPairs
+
+-- data Maybe a = Nothing | Just a
