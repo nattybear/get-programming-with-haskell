@@ -20,3 +20,6 @@ organCatalog :: Map.Map Int Organ
 organCatalog = Map.fromList organPairs
 
 -- data Maybe a = Nothing | Just a
+
+possibleDrawers :: [Int]
+possibleDrawers = [1 .. 50]
