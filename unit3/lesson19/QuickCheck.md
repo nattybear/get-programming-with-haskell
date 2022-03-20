@@ -15,3 +15,15 @@ numOrZero :: Maybe Int -> Int
 numOrZero Nothing = 0
 numOrZero (Just x) = x
 ```
+
+## Quick check 19.3
+
+How would you rewrite `report` so that it works with `Maybe (Location, Container)` and handles the case of the missing `Organ`?
+
+```haskell
+report :: Maybe (Location, Container) -> String
+report Nothing = "container not found"
+report (Just (location, container)) = show container ++
+                                      " in the " ++
+                                      show location
+```
