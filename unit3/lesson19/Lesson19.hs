@@ -87,3 +87,7 @@ report :: (Location, Container) -> String
 report (location, container) = show container ++
                                " in the " ++
                                show location
+
+processRequest :: Int -> Map.Map Int Organ -> String
+processRequest id catalog = report (process organ)
+  where organ = Map.lookup id catalog
