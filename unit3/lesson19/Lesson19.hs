@@ -42,3 +42,7 @@ isSomething (Just _) = True
 
 justTheOrgans :: [Maybe Organ]
 justTheOrgans = filter isSomething availableOrgans
+
+showOrgan :: Maybe Organ -> String
+showOrgan (Just organ) = show organ
+showOrgan Nothing = ""
