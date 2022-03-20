@@ -46,3 +46,6 @@ justTheOrgans = filter isSomething availableOrgans
 showOrgan :: Maybe Organ -> String
 showOrgan (Just organ) = show organ
 showOrgan Nothing = ""
+
+organList :: [String]
+organList = map showOrgan justTheOrgans
