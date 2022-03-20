@@ -1,5 +1,6 @@
 import           Data.List
 import qualified Data.Map  as Map
+import           Data.Maybe
 
 data Organ
   = Heart
@@ -95,3 +96,6 @@ processRequest id catalog = processAndReport organ
 processAndReport :: (Maybe Organ) -> String
 processAndReport (Just organ) = report (process organ)
 processAndReport Nothing = "error, id not found"
+
+emptyDrawers :: [Maybe Organ] -> Int
+emptyDrawers = length . filter isNothing
