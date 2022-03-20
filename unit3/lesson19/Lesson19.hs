@@ -1,4 +1,5 @@
-import qualified Data.Map as Map
+import           Data.List
+import qualified Data.Map  as Map
 
 data Organ
   = Heart
@@ -49,3 +50,6 @@ showOrgan Nothing = ""
 
 organList :: [String]
 organList = map showOrgan justTheOrgans
+
+cleanList :: String
+cleanList = intercalate ", " organList
