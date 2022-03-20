@@ -35,3 +35,7 @@ countOrgan :: Organ -> [Maybe Organ] -> Int
 countOrgan organ available = length (filter
                                       (\x -> x == Just organ)
                                       available)
+
+isSomething :: Maybe Organ -> Bool
+isSomething Nothing = False
+isSomething (Just _) = True
