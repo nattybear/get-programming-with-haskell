@@ -91,3 +91,7 @@ report (location, container) = show container ++
 processRequest :: Int -> Map.Map Int Organ -> String
 processRequest id catalog = report (process organ)
   where organ = Map.lookup id catalog
+
+processAndReport :: (Maybe Organ) -> String
+processAndReport (Just organ) = report (process organ)
+processAndReport Nothing = "error, id not found"
