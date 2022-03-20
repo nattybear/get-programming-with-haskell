@@ -39,3 +39,6 @@ countOrgan organ available = length (filter
 isSomething :: Maybe Organ -> Bool
 isSomething Nothing = False
 isSomething (Just _) = True
+
+justTheOrgans :: [Maybe Organ]
+justTheOrgans = filter isSomething availableOrgans
