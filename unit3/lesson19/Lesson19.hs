@@ -30,3 +30,8 @@ getDrawerContents ids catalog = map getContents ids
 
 availableOrgans :: [Maybe Organ]
 availableOrgans = getDrawerContents possibleDrawers organCatalog
+
+countOrgan :: Organ -> [Maybe Organ] -> Int
+countOrgan organ available = length (filter
+                                      (\x -> x == Just organ)
+                                      available)
