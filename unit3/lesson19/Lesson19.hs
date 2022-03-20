@@ -79,3 +79,11 @@ placeInLocation :: Container -> (Location,Container)
 placeInLocation (Vat a) = (Lab, Vat a)
 placeInLocation (Cooler a) = (Lab, Cooler a)
 placeInLocation (Bag a) = (Kitchen, Bag a)
+
+process :: Organ -> (Location, Container)
+process organ = placeInLocation (organToContainer organ)
+
+report :: (Location, Container) -> String
+report (location, container) = show container ++
+                               " in the " ++
+                               show location
