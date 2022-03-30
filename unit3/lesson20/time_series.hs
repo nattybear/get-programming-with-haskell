@@ -25,3 +25,9 @@ file4 = [ (26, 219.8), (27, 220.5), (28, 223.8)
         , (35, 220.1), (36, 220.6)]
 
 data TS a = TS [Int] [Maybe a]
+
+createTS :: [Int] -> [a] -> TS a
+createTS times values = TS completeTimes extendedValues
+  where completeTimes = [minimum times .. maximum times]
+        timeValueMap = Map.fromList (zip times values)
+        extendedValues = map (\v -> Map.lookup v timeValueMap) completeTimes
