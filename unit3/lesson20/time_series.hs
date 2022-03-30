@@ -31,3 +31,7 @@ createTS times values = TS completeTimes extendedValues
   where completeTimes = [minimum times .. maximum times]
         timeValueMap = Map.fromList (zip times values)
         extendedValues = map (\v -> Map.lookup v timeValueMap) completeTimes
+
+fileToTS :: [(Int,a)] -> TS a
+fileToTS tvPairs = createTS times values
+  where (times, values) = unzip tvPairs
