@@ -124,3 +124,9 @@ diffPair :: Num a => Maybe a -> Maybe a -> Maybe a
 diffPair Nothing _ = Nothing
 diffPair _ Nothing = Nothing
 diffPair (Just x) (Just y) = Just (x - y)
+
+diffTS :: Num a => TS a -> TS a
+diffTS (TS [] []) = TS [] []
+diffTS (TS times values) = TS times (Nothing:diffValues)
+  where shiftValues = tail values
+        diffValues = zipWith diffPair shiftValues values
