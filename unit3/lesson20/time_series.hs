@@ -119,3 +119,8 @@ minTS = compareTS min
 
 maxTS :: Ord a => TS a -> Maybe (Int, Maybe a)
 maxTS = compareTS max
+
+diffPair :: Num a => Maybe a -> Maybe a -> Maybe a
+diffPair Nothing _ = Nothing
+diffPair _ Nothing = Nothing
+diffPair (Just x) (Just y) = Just (x - y)
