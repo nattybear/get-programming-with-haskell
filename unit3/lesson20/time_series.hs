@@ -35,3 +35,7 @@ createTS times values = TS completeTimes extendedValues
 fileToTS :: [(Int,a)] -> TS a
 fileToTS tvPairs = createTS times values
   where (times, values) = unzip tvPairs
+
+showTVPair :: Show a => Int -> (Maybe a) -> String
+showTVPair time (Just value) = mconcat [show time,"|",show value,"\n"]
+showTVPair time Nothing = mconcat [show time,"|NA\n"]
