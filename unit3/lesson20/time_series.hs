@@ -69,3 +69,6 @@ combineTS (TS t1 v1) (TS t2 v2) = TS completeTimes combinedValues
         tvMap = foldl insertMaybePair Map.empty (zip t1 v1)
         updatedMap = foldl insertMaybePair tvMap (zip t2 v2)
         combinedValues = map (\v -> Map.lookup v updatedMap) completeTimes
+
+instance Semigroup (TS a) where
+  (<>) = combineTS
