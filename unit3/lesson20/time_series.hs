@@ -76,3 +76,6 @@ instance Semigroup (TS a) where
 instance Monoid (TS a) where
   mempty = TS [] []
   mappend = (<>)
+
+tsAll :: TS Double
+tsAll = mconcat [ts1,ts2,ts3,ts4]
