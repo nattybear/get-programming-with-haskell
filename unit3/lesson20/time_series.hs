@@ -79,3 +79,8 @@ instance Monoid (TS a) where
 
 tsAll :: TS Double
 tsAll = mconcat [ts1,ts2,ts3,ts4]
+
+mean :: (Real a) => [a] -> Double
+mean xs = total / count
+  where total = (realToFrac . sum) xs
+        count = (realToFrac . length) xs
