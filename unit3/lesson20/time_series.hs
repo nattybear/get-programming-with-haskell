@@ -72,3 +72,7 @@ combineTS (TS t1 v1) (TS t2 v2) = TS completeTimes combinedValues
 
 instance Semigroup (TS a) where
   (<>) = combineTS
+
+instance Monoid (TS a) where
+  mempty = TS [] []
+  mappend = (<>)
