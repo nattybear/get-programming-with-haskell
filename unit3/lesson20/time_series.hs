@@ -113,3 +113,9 @@ compareTS func (TS times values) = if all (== Nothing) values
                                    else Just best
   where pairs = zip times values
         best = foldl (makeTSCompare func) (0, Nothing) pairs
+
+minTS :: Ord a => TS a -> Maybe (Int, Maybe a)
+minTS = compareTS min
+
+maxTS :: Ord a => TS a -> Maybe (Int, Maybe a)
+maxTS = compareTS max
