@@ -43,3 +43,15 @@ showTVPair time Nothing = mconcat [show time,"|NA\n"]
 instance Show a => Show (TS a) where
   show (TS times values) = mconcat rows
     where rows = zipWith showTVPair times values
+
+ts1 :: TS Double
+ts1 = fileToTS file1
+
+ts2 :: TS Double
+ts2 = fileToTS file2
+
+ts3 :: TS Double
+ts3 = fileToTS file3
+
+ts4 :: TS Double
+ts4 = fileToTS file4
