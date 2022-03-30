@@ -55,3 +55,7 @@ ts3 = fileToTS file3
 
 ts4 :: TS Double
 ts4 = fileToTS file4
+
+insertMaybePair :: Ord k => Map.Map k v -> (k, Maybe v) -> Map.Map k v
+insertMaybePair myMap (_,Nothing) = myMap
+insertMaybePair myMap (key,(Just value)) = Map.insert key value myMap
