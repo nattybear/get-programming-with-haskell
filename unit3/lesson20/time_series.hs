@@ -105,3 +105,11 @@ makeTSCompare func = newFunc
         newFunc (i1,Just val1) (i2,Just val2) = if func val1 val2 == val1
                                                 then (i1, Just val1)
                                                 else (i2, Just val2)
+
+compareTS :: Eq a => (a -> a -> a) -> TS a -> Maybe (Int, Maybe a)
+compareTS func (TS [] []) = Nothing
+compareTS func (TS times values) = if all (== Nothing) values
+                                   then Nothing
+                                   else Just best
+  where pairs = zip times values
+        best = foldl (makeTSCompare func) (0, Nothing) pairs
