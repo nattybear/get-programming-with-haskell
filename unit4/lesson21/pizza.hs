@@ -12,3 +12,10 @@ comparePizzas p1 p2 = if costP1 < costP2
                       else p2
   where costP1 = costPerInch p1
         costP2 = costPerInch p2
+
+describePizza :: Pizza -> String
+describePizza (size,cost) = "The " ++ show size ++ " pizza " ++
+                            "is cheaper at " ++
+                            show costSqInch ++
+                            " per square inch"
+  where costSqInch = costPerInch (size,cost)
