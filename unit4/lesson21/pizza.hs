@@ -1,3 +1,5 @@
+import qualified Data.Map as Map
+
 areaGivenDiameter :: Double -> Double
 areaGivenDiameter size = pi * (size / 2) ^ 2
 
@@ -19,6 +21,9 @@ describePizza (size,cost) = "The " ++ show size ++ " pizza " ++
                             show costSqInch ++
                             " per square inch"
   where costSqInch = costPerInch (size,cost)
+
+costData :: Map.Map Int Double
+costData = Map.fromList [(1,18.0),(2,16.0)]
 
 main :: IO ()
 main = do
