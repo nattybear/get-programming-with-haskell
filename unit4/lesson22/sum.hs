@@ -1,3 +1,4 @@
+import Control.Monad
 import System.Environment
 
 main :: IO ()
@@ -6,4 +7,5 @@ main = do
   let linesToRead = if length args > 0
                     then read (head args)
                     else 0 :: Int
-  print linesToRead
+  numbers <- replicateM linesToRead getLine
+  print "sum goes here"
