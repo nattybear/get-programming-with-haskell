@@ -8,4 +8,5 @@ main = do
                     then read (head args)
                     else 0 :: Int
   numbers <- replicateM linesToRead getLine
-  print "sum goes here"
+  let ints = map read numbers :: [Int]
+  print (sum ints)
