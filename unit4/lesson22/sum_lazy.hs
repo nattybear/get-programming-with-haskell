@@ -8,4 +8,5 @@ toInts = map read . lines
 main :: IO ()
 main = do
   userInput <- getContents
-  mapM_ print userInput
+  let numbers = toInts userInput
+  print (sum numbers)
