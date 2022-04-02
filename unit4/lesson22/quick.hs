@@ -11,3 +11,13 @@ reverser = do
   input <- getContents
   let reversed = reverse input
   putStrLn reversed
+
+toInts :: String -> [Int]
+toInts = map read . lines
+
+mainSumSquares :: IO ()
+mainSumSquares = do
+  userInput <- getContents
+  let numbers = toInts userInput
+  let squares = map (^2) numbers
+  print (sum squares)
