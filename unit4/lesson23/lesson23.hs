@@ -56,3 +56,6 @@ lines' = T.splitOn "\n"
 
 unlines' :: [T.Text] -> T.Text
 unlines' = T.intercalate "\n"
+
+dharma :: T.Text
+dharma = "धर्म"
