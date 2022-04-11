@@ -34,3 +34,6 @@ main = do
 
 sampleInput :: T.Text
 sampleInput = "this\nis\ninput"
+
+someText :: T.Text
+someText = "Some\ntext for\t you"
