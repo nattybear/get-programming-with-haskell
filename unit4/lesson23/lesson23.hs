@@ -37,3 +37,9 @@ sampleInput = "this\nis\ninput"
 
 someText :: T.Text
 someText = "Some\ntext for\t you"
+
+breakText :: T.Text
+breakText = "simple"
+
+exampleText :: T.Text
+exampleText = "This is simple to do"
