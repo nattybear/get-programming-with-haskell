@@ -1,3 +1,4 @@
+{-# LANGUAGE OverloadedStrings #-}
 import qualified Data.Text as T
 
 firstWord :: String
@@ -23,3 +24,10 @@ myNum2 = 3
 
 myNum3 :: Double
 myNum3 = 3
+
+aWord :: T.Text
+aWord = "Cheese"
+
+main :: IO ()
+main = do
+  print aWord
