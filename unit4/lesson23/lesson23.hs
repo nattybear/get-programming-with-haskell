@@ -1,5 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 import qualified Data.Text as T
+import Data.Semigroup
 
 firstWord :: String
 firstWord = "pessimism"
@@ -43,3 +44,15 @@ breakText = "simple"
 
 exampleText :: T.Text
 exampleText = "This is simple to do"
+
+combinedTextMonoid :: T.Text
+combinedTextMonoid = mconcat ["some"," ","text"]
+
+combinedTextSemigroup :: T.Text
+combinedTextSemigroup = "some" <> " " <> "text"
+
+lines' :: T.Text -> [T.Text]
+lines' = T.splitOn "\n"
+
+unlines' :: [T.Text] -> T.Text
+unlines' = T.intercalate "\n"
