@@ -31,3 +31,6 @@ aWord = "Cheese"
 main :: IO ()
 main = do
   print aWord
+
+sampleInput :: T.Text
+sampleInput = "this\nis\ninput"
