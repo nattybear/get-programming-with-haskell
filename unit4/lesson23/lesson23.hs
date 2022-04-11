@@ -11,3 +11,6 @@ thirdWord = T.unpack secondWord
 
 fourthWord :: T.Text
 fourthWord = T.pack thirdWord
+
+myWord :: T.Text
+myWord = "dog"
