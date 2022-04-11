@@ -8,3 +8,6 @@ secondWord = T.pack firstWord
 
 thirdWord :: String
 thirdWord = T.unpack secondWord
+
+fourthWord :: T.Text
+fourthWord = T.pack thirdWord
