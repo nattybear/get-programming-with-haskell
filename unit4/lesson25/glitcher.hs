@@ -6,6 +6,9 @@ intToChar :: Int -> Char
 intToChar int = toEnum safeInt
   where safeInt = int `mod` 255
 
+intToBC :: Int -> BC.ByteString
+intToBC int = BC.pack [intToChar int]
+
 main :: IO ()
 main = do
   args <- getArgs
