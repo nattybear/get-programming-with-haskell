@@ -7,7 +7,7 @@ main = do
   args <- getArgs
   let fileName = head args
   imageFile <- BC.readFile fileName
-  glitched <- return imageFile
+  let glitched = imageFile
   let glitchedFileName = mconcat ["glitched_",fileName]
   BC.writeFile glitchedFileName glitched
   print "all done"
