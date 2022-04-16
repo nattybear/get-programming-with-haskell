@@ -23,6 +23,12 @@ randomReplaceByte bytes = do
   charVal <- randomRIO (0,255)
   return (replaceByte location charVal bytes)
 
+sortSection :: Int -> Int -> BC.ByteString -> BC.ByteString
+sortSection start size bytes = mconcat [before,changed,after]
+  where (before,rest) = BC.splitAt start bytes
+        (target,after) = BC.splitAt size rest
+        changed = BC.reverse (BC.sort target)
+
 main :: IO ()
 main = do
   args <- getArgs
