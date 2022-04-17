@@ -1,3 +1,4 @@
+import Control.Monad
 import System.Environment
 import System.Random
 import qualified Data.ByteString as B
@@ -41,7 +42,12 @@ main = do
   args <- getArgs
   let fileName = head args
   imageFile <- BC.readFile fileName
-  glitched <- randomSortSection imageFile
+  glitched <- foldM (\bytes func -> func bytes) imageFile
+                                                [randomReplaceByte
+                                                ,randomSortSection
+                                                ,randomReplaceByte
+                                                ,randomSortSection
+                                                ,randomReplaceByte]
   let glitchedFileName = mconcat ["glitched_",fileName]
   BC.writeFile glitchedFileName glitched
   print "all done"
