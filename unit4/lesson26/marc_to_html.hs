@@ -40,3 +40,14 @@ book3 = Book {
     title = "The Tears of Eros"
   , author = "Bataille, Georges"
   }
+
+booksToHtml :: [Book] -> Html
+booksToHtml books = mconcat ["<html>\n"
+                            ,"<head><title>books</title>"
+                            ,"<meta charset='utf-8'/>"
+                            ,"</head>\n"
+                            ,"<body>\n"
+                            ,booksHtml
+                            ,"\n</body>\n"
+                            ,"</html>"]
+  where booksHtml = (mconcat . (map bookToHtml)) books
