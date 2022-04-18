@@ -7,3 +7,8 @@ import Data.Maybe
 
 type Author = T.Text
 type Title = T.Text
+
+data Book = Book {
+    author :: Author
+  , title :: Title
+  } deriving Show
