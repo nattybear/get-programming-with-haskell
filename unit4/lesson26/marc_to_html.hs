@@ -12,3 +12,5 @@ data Book = Book {
     author :: Author
   , title :: Title
   } deriving Show
+
+type Html = T.Text
