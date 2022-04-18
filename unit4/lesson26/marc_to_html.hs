@@ -51,3 +51,6 @@ booksToHtml books = mconcat ["<html>\n"
                             ,"\n</body>\n"
                             ,"</html>"]
   where booksHtml = (mconcat . (map bookToHtml)) books
+
+myBooks :: [Book]
+myBooks = [book1,book2,book2]
