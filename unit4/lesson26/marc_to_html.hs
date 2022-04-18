@@ -14,3 +14,11 @@ data Book = Book {
   } deriving Show
 
 type Html = T.Text
+
+bookToHtml :: Book -> Html
+bookToHtml book = mconcat ["<p>\n"
+                          ,titleInTags
+                          ,authorInTags
+                          ,"</p>\n"]
+  where titleInTags  = mconcat ["<strong>",(title book),"</strong>\n"]
+        authorInTags = mconcat ["<em>",(author book),"</em>\n"]
