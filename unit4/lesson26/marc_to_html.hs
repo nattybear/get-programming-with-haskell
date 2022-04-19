@@ -64,5 +64,11 @@ getLeader record = B.take leaderLength record
 leaderLength :: Int
 leaderLength = 24
 
+rawToInt :: B.ByteString -> Int
+rawToInt = (read . T.unpack . E.decodeUtf8)
+
+getRecordLength :: MarcLeaderRaw -> Int
+getRecordLength leader = rawToInt (B.take 5 leader)
+
 main :: IO ()
 main = TIO.writeFile "books.html" (booksToHtml myBooks)
