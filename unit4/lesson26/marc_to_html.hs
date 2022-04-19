@@ -59,7 +59,7 @@ type MarcRecordRaw = B.ByteString
 type MarcLeaderRaw = B.ByteString
 
 getLeader :: MarcRecordRaw -> MarcLeaderRaw
-getLeader = undefined
+getLeader record = B.take leaderLength record
 
 leaderLength :: Int
 leaderLength = 24
