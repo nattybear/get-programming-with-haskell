@@ -71,7 +71,8 @@ getRecordLength :: MarcLeaderRaw -> Int
 getRecordLength leader = rawToInt (B.take 5 leader)
 
 nextAndRest :: B.ByteString -> (MarcRecordRaw,B.ByteString)
-nextAndRest = undefined
+nextAndRest marcStream = B.splitAt recordLength marcStream
+  where recordLength = getRecordLength marcStream
 
 main :: IO ()
 main = TIO.writeFile "books.html" (booksToHtml myBooks)
