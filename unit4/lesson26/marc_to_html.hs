@@ -61,5 +61,8 @@ type MarcLeaderRaw = B.ByteString
 getLeader :: MarcRecordRaw -> MarcLeaderRaw
 getLeader = undefined
 
+leaderLength :: Int
+leaderLength = 24
+
 main :: IO ()
 main = TIO.writeFile "books.html" (booksToHtml myBooks)
