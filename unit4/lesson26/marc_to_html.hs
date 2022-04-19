@@ -70,5 +70,8 @@ rawToInt = (read . T.unpack . E.decodeUtf8)
 getRecordLength :: MarcLeaderRaw -> Int
 getRecordLength leader = rawToInt (B.take 5 leader)
 
+nextAndRest :: B.ByteString -> (MarcRecordRaw,B.ByteString)
+nextAndRest = undefined
+
 main :: IO ()
 main = TIO.writeFile "books.html" (booksToHtml myBooks)
