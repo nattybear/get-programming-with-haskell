@@ -58,5 +58,8 @@ myBooks = [book1,book2,book3]
 type MarcRecordRaw = B.ByteString
 type MarcLeaderRaw = B.ByteString
 
+getLeader :: MarcRecordRaw -> MarcLeaderRaw
+getLeader = undefined
+
 main :: IO ()
 main = TIO.writeFile "books.html" (booksToHtml myBooks)
