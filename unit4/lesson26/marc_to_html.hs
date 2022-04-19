@@ -82,6 +82,10 @@ allRecords marcStream = if marcStream == B.empty
 
 type MarcDirectoryRaw = B.ByteString
 
+getBaseAddress :: MarcLeaderRaw -> Int
+getBaseAddress leader = rawToInt (B.take 5 remainder)
+  where remainder = B.drop 12 leader
+
 main :: IO ()
 main = do
   marcData <- B.readFile "sample.mrc"
