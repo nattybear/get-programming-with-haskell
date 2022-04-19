@@ -74,5 +74,11 @@ nextAndRest :: B.ByteString -> (MarcRecordRaw,B.ByteString)
 nextAndRest marcStream = B.splitAt recordLength marcStream
   where recordLength = getRecordLength marcStream
 
+allRecords :: B.ByteString -> [MarcRecordRaw]
+allRecords marcStream = if marcStream == B.empty
+                        then []
+                        else next : allRecords rest
+  where (next, rest) = nextAndRest marcStream
+
 main :: IO ()
 main = TIO.writeFile "books.html" (booksToHtml myBooks)
