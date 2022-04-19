@@ -80,6 +80,8 @@ allRecords marcStream = if marcStream == B.empty
                         else next : allRecords rest
   where (next, rest) = nextAndRest marcStream
 
+type MarcDirectoryRaw = B.ByteString
+
 main :: IO ()
 main = do
   marcData <- B.readFile "sample.mrc"
