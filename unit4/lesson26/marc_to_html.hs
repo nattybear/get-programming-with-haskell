@@ -89,6 +89,11 @@ getBaseAddress leader = rawToInt (B.take 5 remainder)
 getDirectoryLength :: MarcLeaderRaw -> Int
 getDirectoryLength leader = getBaseAddress leader - (leaderLength + 1)
 
+getDirectory :: MarcRecordRaw -> MarcDirectoryRaw
+getDirectory record = B.take directoryLength afterLeader
+  where directoryLength = getDirectoryLength record
+        afterLeader = B.drop leaderLength record
+
 main :: IO ()
 main = do
   marcData <- B.readFile "sample.mrc"
