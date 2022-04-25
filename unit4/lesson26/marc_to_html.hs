@@ -175,6 +175,12 @@ lookupTitle = lookupValue titleTag titleSubfield
 lookupAuthor :: MarcRecordRaw -> Maybe Author
 lookupAuthor = lookupValue authorTag authorSubfield
 
+marcToPairs :: B.ByteString -> [(Maybe Title, Maybe Author)]
+marcToPairs marcStream = zip titles authors
+  where records = allRecords marcStream
+        titles = map lookupTitle records
+        authors = map lookupAuthor records
+
 main :: IO ()
 main = do
   marcData <- B.readFile "sample.mrc"
