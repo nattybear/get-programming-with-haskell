@@ -131,6 +131,9 @@ getTextField record fieldMetadata = E.decodeUtf8 byteStringValue
         baseAtEntry = B.drop (fieldStart fieldMetadata) baseRecord
         byteStringValue = B.take (fieldLength fieldMetadata) baseAtEntry
 
+fieldDelimiter :: Char
+fieldDelimiter = toEnum 31
+
 main :: IO ()
 main = do
   marcData <- B.readFile "sample.mrc"
