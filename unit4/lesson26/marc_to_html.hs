@@ -183,9 +183,9 @@ marcToPairs marcStream = zip titles authors
 
 pairsToBooks :: [(Maybe Title, Maybe Author)] -> [Book]
 pairsToBooks pairs = map (\(title,author) -> Book {
-                                                  title = fromJust title
-                                                , author = fromJust author
-                                              }) justPairs
+                                                 title = fromJust title
+                                               , author = fromJust author
+                                             }) justPairs
   where justPairs = filter (\(title,author) ->    isJust title
                                                && isJust author) pairs
 
