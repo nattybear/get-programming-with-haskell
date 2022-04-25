@@ -189,6 +189,9 @@ pairsToBooks pairs = map (\(title,author) -> Book {
   where justPairs = filter (\(title,author) ->    isJust title
                                                && isJust author) pairs
 
+processRecords :: Int -> B.ByteString -> Html
+processRecords n = booksToHtml . pairsToBooks . (take n) . marcToPairs
+
 main :: IO ()
 main = do
   marcData <- B.readFile "sample.mrc"
