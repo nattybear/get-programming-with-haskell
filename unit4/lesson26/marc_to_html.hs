@@ -181,6 +181,14 @@ marcToPairs marcStream = zip titles authors
         titles = map lookupTitle records
         authors = map lookupAuthor records
 
+pairsToBooks :: [(Maybe Title, Maybe Author)] -> [Book]
+pairsToBooks pairs = map (\(title,author) -> Book {
+                                                  title = fromJust title
+                                                , author = fromJust author
+                                              }) justPairs
+  where justPairs = filter (\(title,author) ->    isJust title
+                                               && isJust author) pairs
+
 main :: IO ()
 main = do
   marcData <- B.readFile "sample.mrc"
