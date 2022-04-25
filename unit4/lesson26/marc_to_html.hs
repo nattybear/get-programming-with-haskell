@@ -195,5 +195,5 @@ processRecords n = booksToHtml . pairsToBooks . (take n) . marcToPairs
 main :: IO ()
 main = do
   marcData <- B.readFile "sample.mrc"
-  let marcRecords = allRecords marcData
-  print (length marcRecords)
+  let processed = processRecords 500 marcData
+  TIO.writeFile "books.html" processed
