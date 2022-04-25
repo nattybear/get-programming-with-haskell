@@ -134,6 +134,18 @@ getTextField record fieldMetadata = E.decodeUtf8 byteStringValue
 fieldDelimiter :: Char
 fieldDelimiter = toEnum 31
 
+titleTag :: T.Text
+titleTag = "245"
+
+titleSubfield :: Char
+titleSubfield = 'a'
+
+authorTag :: T.Text
+authorTag = "100"
+
+authorSubfield :: Char
+authorSubfield = 'a'
+
 main :: IO ()
 main = do
   marcData <- B.readFile "sample.mrc"
