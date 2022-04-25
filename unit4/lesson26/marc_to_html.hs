@@ -169,6 +169,12 @@ lookupValue aTag subfield record = lookupSubfield entryMetadata
                                                   record
   where entryMetadata = lookupFieldMetadata aTag record
 
+lookupTitle :: MarcRecordRaw -> Maybe Title
+lookupTitle = lookupValue titleTag titleSubfield
+
+lookupAuthor :: MarcRecordRaw -> Maybe Author
+lookupAuthor = lookupValue authorTag authorSubfield
+
 main :: IO ()
 main = do
   marcData <- B.readFile "sample.mrc"
