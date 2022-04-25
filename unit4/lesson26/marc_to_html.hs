@@ -153,6 +153,16 @@ lookupFieldMetadata aTag record = if length results < 1
   where metadata = (getFieldMetadata . splitDirectory . getDirectory) record
         results = filter ((== aTag) . tag) metadata
 
+lookupSubfield :: Maybe FieldMetadata -> Char -> MarcRecordRaw -> Maybe T.Text
+lookupSubfield Nothing subfield record = Nothing
+lookupSubfield (Just fieldMetadata) subfield record =
+    if results == []
+    then Nothing
+    else Just ((T.drop 1 . head) results)
+  where rawField = getTextField record fieldMetadata
+        subfields = T.split (== fieldDelimiter) rawField
+        results = filter ((== subfield) . T.head) subfields
+
 main :: IO ()
 main = do
   marcData <- B.readFile "sample.mrc"
