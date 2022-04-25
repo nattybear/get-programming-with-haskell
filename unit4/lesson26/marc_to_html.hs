@@ -163,6 +163,12 @@ lookupSubfield (Just fieldMetadata) subfield record =
         subfields = T.split (== fieldDelimiter) rawField
         results = filter ((== subfield) . T.head) subfields
 
+lookupValue :: T.Text -> Char -> MarcRecordRaw -> Maybe T.Text
+lookupValue aTag subfield record = lookupSubfield entryMetadata
+                                                  subfield
+                                                  record
+  where entryMetadata = lookupFieldMetadata aTag record
+
 main :: IO ()
 main = do
   marcData <- B.readFile "sample.mrc"
