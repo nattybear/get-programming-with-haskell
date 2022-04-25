@@ -105,6 +105,11 @@ splitDirectory directory = if directory == B.empty
                            else nextEntry : splitDirectory restEntries
   where (nextEntry, restEntries) = B.splitAt dirEntryLength directory
 
+data FieldMetadata = FieldMetadata { tag         :: T.Text
+                                   , fieldLength :: Int
+                                   , fieldStart  :: Int
+                                   } deriving Show
+
 main :: IO ()
 main = do
   marcData <- B.readFile "sample.mrc"
