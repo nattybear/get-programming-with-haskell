@@ -110,6 +110,14 @@ data FieldMetadata = FieldMetadata { tag         :: T.Text
                                    , fieldStart  :: Int
                                    } deriving Show
 
+makeFieldMetadata :: MarcDirectoryEntryRaw -> FieldMetadata
+makeFieldMetadata entry = FieldMetadata textTag theLength theStart
+  where (theTag,rest) = B.splitAt 3 entry
+        textTag = E.decodeUtf8 theTag
+        (rawLength,rawStart) = B.splitAt 4 rest
+        theLength = rawToInt rawLength
+        theStart = rawToInt rawStart
+
 main :: IO ()
 main = do
   marcData <- B.readFile "sample.mrc"
