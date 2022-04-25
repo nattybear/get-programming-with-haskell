@@ -99,6 +99,12 @@ type MarcDirectoryEntryRaw = B.ByteString
 dirEntryLength :: Int
 dirEntryLength = 12
 
+splitDirectory :: MarcDirectoryRaw -> [MarcDirectoryEntryRaw]
+splitDirectory directory = if directory == B.empty
+                           then []
+                           else nextEntry : splitDirectory restEntries
+  where (nextEntry, restEntries) = B.splitAt dirEntryLength directory
+
 main :: IO ()
 main = do
   marcData <- B.readFile "sample.mrc"
