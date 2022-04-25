@@ -146,6 +146,13 @@ authorTag = "100"
 authorSubfield :: Char
 authorSubfield = 'a'
 
+lookupFieldMetadata :: T.Text -> MarcRecordRaw -> Maybe FieldMetadata
+lookupFieldMetadata aTag record = if length results < 1
+                                  then Nothing
+                                  else Just (head results)
+  where metadata = (getFieldMetadata . splitDirectory . getDirectory) record
+        results = filter ((== aTag) . tag) metadata
+
 main :: IO ()
 main = do
   marcData <- B.readFile "sample.mrc"
