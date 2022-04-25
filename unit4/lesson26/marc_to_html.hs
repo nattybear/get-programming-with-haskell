@@ -94,6 +94,11 @@ getDirectory record = B.take directoryLength afterLeader
   where directoryLength = getDirectoryLength record
         afterLeader = B.drop leaderLength record
 
+type MarcDirectoryEntryRaw = B.ByteString
+
+dirEntryLength :: Int
+dirEntryLength = 12
+
 main :: IO ()
 main = do
   marcData <- B.readFile "sample.mrc"
