@@ -121,6 +121,8 @@ makeFieldMetadata entry = FieldMetadata textTag theLength theStart
 getFieldMetadata :: [MarcDirectoryEntryRaw] -> [FieldMetadata]
 getFieldMetadata rawEntries = map makeFieldMetadata rawEntries
 
+type FieldText = T.Text
+
 main :: IO ()
 main = do
   marcData <- B.readFile "sample.mrc"
