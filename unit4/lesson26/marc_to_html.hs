@@ -123,6 +123,14 @@ getFieldMetadata rawEntries = map makeFieldMetadata rawEntries
 
 type FieldText = T.Text
 
+getTextField :: MarcRecordRaw -> FieldMetadata -> FieldText
+getTextField record fieldMetadata = E.decodeUtf8 byteStringValue
+  where recordLength = getRecordLength record
+        baseAddress = getBaseAddress record
+        baseRecord = B.drop baseAddress record
+        baseAtEntry = B.drop (fieldStart fieldMetadata) baseRecord
+        byteStringValue = B.take (fieldLength fieldMetadata) baseAtEntry
+
 main :: IO ()
 main = do
   marcData <- B.readFile "sample.mrc"
