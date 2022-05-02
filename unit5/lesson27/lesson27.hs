@@ -105,3 +105,14 @@ myBox = Box 1
 
 unwrap :: Box a -> a
 unwrap (Box x) = x
+
+printCost :: Maybe Double -> IO ()
+printCost Nothing = putStrLn "item not found"
+printCost (Just cost) = print cost
+
+main :: IO ()
+main = do
+  putStrLn "enter a part number"
+  partNo <- getLine
+  let part = Map.lookup (read partNo) partsDB
+  printCost (cost <$> part)
