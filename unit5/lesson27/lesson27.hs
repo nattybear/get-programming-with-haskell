@@ -85,3 +85,6 @@ allPartsHtml = renderHtml <$> allParts
 
 htmlPartsDB :: Map.Map Int Html
 htmlPartsDB = renderHtml <$> partsDB
+
+leftArmIO :: IO RobotPart
+leftArmIO = return leftArm
