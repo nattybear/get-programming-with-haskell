@@ -99,3 +99,9 @@ instance Functor Box where
 
 morePresents :: Int -> Box a -> Box [a]
 morePresents n box = replicate n <$> box
+
+myBox :: Box Int
+myBox = Box 1
+
+unwrap :: Box a -> a
+unwrap (Box x) = x
