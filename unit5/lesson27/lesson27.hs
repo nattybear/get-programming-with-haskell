@@ -1,3 +1,5 @@
+import qualified Data.Map as Map
+
 successfulRequest :: Maybe Int
 successfulRequest = Just 6
 
@@ -62,3 +64,9 @@ renderHtml part = mconcat ["<h2>",partName,"</h2>"
         partDesc = description part
         partCost = show (cost part)
         partCount = show (count part)
+
+partsDB :: Map.Map Int RobotPart
+partsDB = Map.fromList keyVals
+  where keys = [1,2,3]
+        vals = [leftArm,rightArm,robotHead]
+        keyVals = zip keys vals
