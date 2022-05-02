@@ -70,3 +70,6 @@ partsDB = Map.fromList keyVals
   where keys = [1,2,3]
         vals = [leftArm,rightArm,robotHead]
         keyVals = zip keys vals
+
+partVal :: Maybe RobotPart
+partVal = Map.lookup 1 partsDB
