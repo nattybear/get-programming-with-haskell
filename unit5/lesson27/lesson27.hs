@@ -11,3 +11,9 @@ intMaybe Nothing = Nothing
 reverseMaybe :: Maybe String -> Maybe String
 reverseMaybe (Just s) = Just (reverse s)
 reverseMaybe Nothing = Nothing
+
+successStr :: Maybe String
+successStr = show <$> successfulRequest
+
+failStr :: Maybe String
+failStr = show <$> failedRequest
