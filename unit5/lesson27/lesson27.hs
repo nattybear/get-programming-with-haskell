@@ -76,3 +76,6 @@ partVal = Map.lookup 1 partsDB
 
 partHtml :: Maybe Html
 partHtml = renderHtml <$> partVal
+
+allParts :: [RobotPart]
+allParts = map snd (Map.toList partsDB)
