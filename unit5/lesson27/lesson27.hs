@@ -78,7 +78,7 @@ partHtml :: Maybe Html
 partHtml = renderHtml <$> partVal
 
 allParts :: [RobotPart]
-allParts = map snd (Map.toList partsDB)
+allParts = snd <$> (Map.toList partsDB)
 
 allPartsHtml :: [Html]
 allPartsHtml = renderHtml <$> allParts
