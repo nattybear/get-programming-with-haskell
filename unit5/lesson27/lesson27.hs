@@ -73,3 +73,6 @@ partsDB = Map.fromList keyVals
 
 partVal :: Maybe RobotPart
 partVal = Map.lookup 1 partsDB
+
+partHtml :: Maybe Html
+partHtml = renderHtml <$> partVal
