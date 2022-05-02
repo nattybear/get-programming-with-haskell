@@ -82,3 +82,6 @@ allParts = snd <$> (Map.toList partsDB)
 
 allPartsHtml :: [Html]
 allPartsHtml = renderHtml <$> allParts
+
+htmlPartsDB :: Map.Map Int Html
+htmlPartsDB = renderHtml <$> partsDB
