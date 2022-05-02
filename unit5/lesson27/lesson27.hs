@@ -88,3 +88,6 @@ htmlPartsDB = renderHtml <$> partsDB
 
 leftArmIO :: IO RobotPart
 leftArmIO = return leftArm
+
+htmlSnippet :: IO Html
+htmlSnippet = renderHtml <$> leftArmIO
