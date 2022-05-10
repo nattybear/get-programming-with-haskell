@@ -35,6 +35,12 @@ haversineMaybe Nothing _ = Nothing
 haversineMaybe _ Nothing = Nothing
 haversineMaybe (Just val1) (Just val2) = Just (haversine val1 val2)
 
+haversineIO :: IO LatLong -> IO LatLong -> IO Double
+haversineIO x y = do
+  x' <- x
+  y' <- y
+  return (haversine x' y')
+
 addMaybe :: Maybe Int -> Maybe Int -> Maybe Int
 addMaybe (Just x) (Just y) = Just (x + y)
 addMaybe _ _ = Nothing
