@@ -34,3 +34,8 @@ haversineMaybe :: Maybe LatLong -> Maybe LatLong -> Maybe Double
 haversineMaybe Nothing _ = Nothing
 haversineMaybe _ Nothing = Nothing
 haversineMaybe (Just val1) (Just val2) = Just (haversine val1 val2)
+
+addMaybe :: Maybe Int -> Maybe Int -> Maybe Int
+addMaybe Nothing _ = Nothing
+addMaybe _ Nothing = Nothing
+addMaybe (Just x) (Just y) = Just (x + y)
