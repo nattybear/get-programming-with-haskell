@@ -38,3 +38,5 @@ haversineMaybe (Just val1) (Just val2) = Just (haversine val1 val2)
 addMaybe :: Maybe Int -> Maybe Int -> Maybe Int
 addMaybe (Just x) (Just y) = Just (x + y)
 addMaybe _ _ = Nothing
+
+maybeInc = (+) <$> Just 1
