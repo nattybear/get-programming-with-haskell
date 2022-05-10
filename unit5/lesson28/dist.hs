@@ -25,3 +25,7 @@ haversine coords1 coords2 = earthRadius * c
         a = (sin (dlat/2))^2 + cos rlat1 * cos rlat2 * (sin (dlong/2))^2
         c = 2 * atan2 (sqrt a) (sqrt (1-a))
         earthRadius = 3961.0
+
+printDistance :: Maybe Double -> IO ()
+printDistance Nothing = putStrLn "Error, invalid city entered"
+printDistance (Just distance) = putStrLn (show distance ++ " miles")
