@@ -42,3 +42,6 @@ testData = pure User <*> testNames
 
 allFmap :: Applicative f => (a -> b) -> f a -> f b
 allFmap f fa = pure f <*> fa
+
+exampleMaybe :: Maybe Int
+exampleMaybe  = pure (*) <*> pure ((+) 2 4) <*> pure 6
