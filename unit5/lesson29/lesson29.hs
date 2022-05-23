@@ -39,3 +39,6 @@ testData :: [User]
 testData = pure User <*> testNames
                      <*> testIds
                      <*> testScores
+
+allFmap :: Applicative f => (a -> b) -> f a -> f b
+allFmap f fa = pure f <*> fa
