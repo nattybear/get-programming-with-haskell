@@ -29,3 +29,8 @@ testIds :: [Int]
 testIds = [1337
           ,0123
           ,999999]
+
+testScores :: [Int]
+testScores = [0
+             ,100000
+             ,-99999]
