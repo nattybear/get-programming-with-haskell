@@ -34,3 +34,8 @@ testScores :: [Int]
 testScores = [0
              ,100000
              ,-99999]
+
+testData :: [User]
+testData = pure User <*> testNames
+                     <*> testIds
+                     <*> testScores
