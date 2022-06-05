@@ -28,3 +28,7 @@ lookupUserName id = Map.lookup id userNameDB
 
 lookupCredits :: UserName -> Maybe PlayerCredits
 lookupCredits username = Map.lookup username creditsDB
+
+altLookupCredits :: Maybe UserName -> Maybe PlayerCredits
+altLookupCredits Nothing         = Nothing
+altLookupCredits (Just username) = lookupCredits username
