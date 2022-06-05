@@ -19,3 +19,6 @@ creditsDB = Map.fromList [("nYarlathoTep",2000)
                          ,("rcarter1919",12)
                          ,("xCTHULHUx",50000)
                          ,("yogSOThoth",150000)]
+
+creditsFromId :: GamerId -> Maybe PlayerCredits
+creditsFromId = undefined
