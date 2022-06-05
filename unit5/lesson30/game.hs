@@ -3,6 +3,7 @@ import qualified Data.Map as Map
 type UserName = String
 type GamerId = Int
 type PlayerCredits = Int
+type WillCoId = Int
 
 userNameDB :: Map.Map GamerId UserName
 userNameDB = Map.fromList [(1,"nYarlathoTep")
@@ -19,6 +20,17 @@ creditsDB = Map.fromList [("nYarlathoTep",2000)
                          ,("rcarter1919",12)
                          ,("xCTHULHUx",50000)
                          ,("yogSOThoth",150000)]
+
+gamerIdDB :: Map.Map WillCoId GamerId
+gamerIdDB = Map.fromList [(1001,1)
+                         ,(1002,2)
+                         ,(1003,3)
+                         ,(1004,4)
+                         ,(1005,5)
+                         ,(1006,6)]
+
+lookupGamerId :: WillCoId -> Maybe GamerId
+lookupGamerId id = Map.lookup id gamerIdDB
 
 creditsFromId :: GamerId -> Maybe PlayerCredits
 creditsFromId id = lookupUserName id >>= lookupCredits
