@@ -1,4 +1,2 @@
 echo :: IO ()
-echo = do
-  x <- getLine
-  putStrLn x
+echo = getLine >>= putStrLn
