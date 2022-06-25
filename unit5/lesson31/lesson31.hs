@@ -25,4 +25,6 @@ main = getLine >>=
            putStrLn statement) (helloPerson name))
 
 echo :: IO ()
-echo = getLine >>= putStrLn
+echo = do
+  line <- getLine
+  putStrLn line
