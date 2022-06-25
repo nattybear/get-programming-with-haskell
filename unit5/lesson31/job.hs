@@ -23,3 +23,12 @@ testCandidate = Candidate
   , codeReview  = A
   , cultureFit  = A
   , education   = PhD }
+
+readInt :: IO Int
+readInt = getLine >>= (return . read)
+
+readGrade :: IO Grade
+readGrade = getLine >>= (return . read)
+
+readDegree :: IO Degree
+readDegree = getLine >>= (return . read)
