@@ -16,3 +16,10 @@ viable candidate = all (== True) tests
         tests = [ passedCoding
                 , passedCultureFit
                 , educationMin ]
+
+testCandidate :: Candidate
+testCandidate = Candidate
+  { candidateId = 1
+  , codeReview  = A
+  , cultureFit  = A
+  , education   = PhD }
