@@ -32,3 +32,18 @@ readGrade = getLine >>= (return . read)
 
 readDegree :: IO Degree
 readDegree = getLine >>= (return . read)
+
+readCandidate :: IO Candidate
+readCandidate = do
+  putStrLn "enter id:"
+  cId <- readInt
+  putStrLn "enter code grade:"
+  codeGrade <- readGrade
+  putStrLn "enter culture fit grade:"
+  cultureGrade <- readGrade
+  putStrLn "enter education:"
+  degree <- readDegree
+  return (Candidate { candidateId = cId
+                    , codeReview  = codeGrade
+                    , cultureFit  = cultureGrade
+                    , education   = degree })
