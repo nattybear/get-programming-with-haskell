@@ -7,3 +7,12 @@ data Candidate = Candidate
   , codeReview  :: Grade
   , cultureFit  :: Grade
   , education   :: Degree } deriving Show
+
+viable :: Candidate -> Bool
+viable candidate = all (== True) tests
+  where passedCoding     = codeReview candidate > B
+        passedCultureFit = cultureFit candidate > C
+        educationMin     = education  candidate >= MS
+        tests = [ passedCoding
+                , passedCultureFit
+                , educationMin ]
