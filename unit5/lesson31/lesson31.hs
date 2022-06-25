@@ -5,11 +5,10 @@ nameStatement :: String -> String
 nameStatement name = "Hello, " ++ name ++ "!"
 
 helloName :: IO ()
-helloName = askForName >>
-            getLine >>=
-            (\name ->
-              return (nameStatement name)) >>=
-            putStrLn
+helloName = do
+  askForName
+  name <- getLine
+  putStrLn (nameStatement name)
 
 maxPairM :: (Monad m, Ord a) => m (a, a) -> m a
 maxPairM pair = do
