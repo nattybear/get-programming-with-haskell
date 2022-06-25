@@ -23,3 +23,6 @@ main = getLine >>=
        (\name ->
          (\statement ->
            putStrLn statement) (helloPerson name))
+
+echo :: IO ()
+echo = getLine >>= putStrLn
