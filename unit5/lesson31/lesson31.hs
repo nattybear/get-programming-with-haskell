@@ -19,7 +19,7 @@ helloPerson :: String -> String
 helloPerson name = "Hello" ++ " " ++ name ++ "!"
 
 main :: IO ()
-main = do
-  name <- getLine
-  let statement = helloPerson name
-  putStrLn statement
+main = getLine >>=
+       (\name ->
+         (\statement ->
+           putStrLn statement) (helloPerson name))
