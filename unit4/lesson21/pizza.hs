@@ -49,8 +49,8 @@ main =
               betterPizza = comparePizzas pizza1 pizza2
           in  putStrLn (describePizza betterPizza)))))
 
-listMain :: [String]
-listMain = do
+mMain :: Monad m => m Double -> m Double -> m String
+mMain sizes costs = do
   size1 <- sizes
   cost1 <- costs
   size2 <- sizes
