@@ -28,6 +28,12 @@ costData = Map.fromList [(1,18.0),(2,16.0)]
 sizeData :: Map.Map Int Double
 sizeData = Map.fromList [(1,20.0),(2,15.0)]
 
+costs :: [Double]
+costs = [18.0, 16.0]
+
+sizes :: [Double]
+sizes = [20.0, 15.0]
+
 main :: IO ()
 main =
   putStrLn "What is the size of pizza 1" >>
@@ -43,12 +49,12 @@ main =
               betterPizza = comparePizzas pizza1 pizza2
           in  putStrLn (describePizza betterPizza)))))
 
-maybeMain :: Maybe String
-maybeMain = do
-  size1 <- Map.lookup 1 sizeData
-  cost1 <- Map.lookup 1 costData
-  size2 <- Map.lookup 2 sizeData
-  cost2 <- Map.lookup 2 costData
+listMain :: [String]
+listMain = do
+  size1 <- sizes
+  cost1 <- costs
+  size2 <- sizes
+  cost2 <- costs
   let pizza1 = (size1,cost1)
   let pizza2 = (size2,cost2)
   let betterPizza = comparePizzas pizza1 pizza2
