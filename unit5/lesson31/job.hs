@@ -83,3 +83,12 @@ candidateDB :: Map.Map Int Candidate
 candidateDB = Map.fromList [ (1, candidate1)
                            , (2, candidate2)
                            , (3, candidate3) ]
+
+assessCandidateMaybe :: Int -> Maybe String
+assessCandidateMaybe cId = do
+  candidate <- Map.lookup cId candidateDB
+  let passed = viable candidate
+  let statement = if passed
+                  then "passed"
+                  else "failed"
+  return statement
