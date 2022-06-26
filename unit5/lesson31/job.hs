@@ -106,3 +106,9 @@ assessCandidateList candidates = do
                   then "passed"
                   else "failed"
   return statement
+
+assessCandidates :: [Candidate] -> [String]
+assessCandidates candidates = map (\x -> if x
+                                         then "passed"
+                                         else "failed") passed
+  where passed = map viable candidates
