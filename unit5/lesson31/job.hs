@@ -1,3 +1,5 @@
+import qualified Data.Map as Map
+
 data Grade = F | D | C | B | A deriving (Eq, Ord, Enum, Show, Read)
 
 data Degree = HS | BA | MS | PhD deriving (Eq, Ord, Enum, Show, Read)
@@ -76,3 +78,8 @@ candidate3 = Candidate { candidateId = 3
                        , codeReview  = A
                        , cultureFit  = B
                        , education   = MS }
+
+candidateDB :: Map.Map Int Candidate
+candidateDB = Map.fromList [ (1, candidate1)
+                           , (2, candidate2)
+                           , (3, candidate3) ]
