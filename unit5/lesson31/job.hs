@@ -97,3 +97,12 @@ candidates :: [Candidate]
 candidates = [ candidate1
              , candidate2
              , candidate3 ]
+
+assessCandidateList :: [Candidate] -> [String]
+assessCandidateList candidates = do
+  candidate <- candidates
+  let passed    = viable candidate
+      statement = if passed
+                  then "passed"
+                  else "failed"
+  return statement
