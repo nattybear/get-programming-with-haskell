@@ -28,7 +28,9 @@ readInt :: IO Int
 readInt = getLine >>= (return . read)
 
 readGrade :: IO Grade
-readGrade = getLine >>= (return . read)
+readGrade = do
+  grade <- getLine
+  return (read grade)
 
 readDegree :: IO Degree
 readDegree = getLine >>= (return . read)
