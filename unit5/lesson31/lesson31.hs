@@ -28,3 +28,7 @@ echo :: IO ()
 echo = do
   line <- getLine
   putStrLn line
+
+failPassOrElse :: Maybe String -> String
+failPassOrElse Nothing  = "error id not found"
+failPassOrElse (Just x) = x
