@@ -88,7 +88,7 @@ assessCandidateMaybe :: Int -> Maybe String
 assessCandidateMaybe cId = do
   candidate <- Map.lookup cId candidateDB
   let passed = viable candidate
-  let statement = if passed
+      statement = if passed
                   then "passed"
                   else "failed"
   return statement
