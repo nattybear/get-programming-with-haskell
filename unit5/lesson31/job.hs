@@ -112,3 +112,12 @@ assessCandidates candidates = map (\x -> if x
                                          then "passed"
                                          else "failed") passed
   where passed = map viable candidates
+
+assessCandidate :: Monad m => m Candidate -> m String
+assessCandidate candidates = do
+  candidate <- candidates
+  let passed    = viable candidate
+      statement = if passed
+                  then "passed"
+                  else "failed"
+  return statement
