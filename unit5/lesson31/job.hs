@@ -58,3 +58,21 @@ assessCandidateIO = do
                   then "passed"
                   else "failed"
   return statement
+
+candidate1 :: Candidate
+candidate1 = Candidate { candidateId = 1
+                       , codeReview  = A
+                       , cultureFit  = A
+                       , education   = BA }
+
+candidate2 :: Candidate
+candidate2 = Candidate { candidateId = 2
+                       , codeReview  = C
+                       , cultureFit  = A
+                       , education   = PhD }
+
+candidate3 :: Candidate
+candidate3 = Candidate { candidateId = 3
+                       , codeReview  = A
+                       , cultureFit  = B
+                       , education   = MS }
