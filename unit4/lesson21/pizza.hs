@@ -29,19 +29,19 @@ sizeData :: Map.Map Int Double
 sizeData = Map.fromList [(1,20.0),(2,15.0)]
 
 main :: IO ()
-main = do
-  putStrLn "What is the size of pizza 1"
-  size1 <- getLine
-  putStrLn "What is the cost of pizza 1"
-  cost1 <- getLine
-  putStrLn "What is the size of pizza 2"
-  size2 <- getLine
-  putStrLn "What is the cost of pizza 2"
-  cost2 <- getLine
-  let pizza1 = (read size1, read cost1)
-  let pizza2 = (read size2, read cost2)
-  let betterPizza = comparePizzas pizza1 pizza2
-  putStrLn (describePizza betterPizza)
+main =
+  putStrLn "What is the size of pizza 1" >>
+  getLine >>= (\size1 ->
+    putStrLn "What is the cost of pizza1" >>
+    getLine >>= (\cost1 ->
+      putStrLn "What is the size of pizza 2" >>
+      getLine >>= (\size2 ->
+        putStrLn "What is the cost of pizza 2" >>
+        getLine >>= (\cost2 ->
+          let pizza1 = (read size1, read cost1)
+              pizza2 = (read size2, read cost2)
+              betterPizza = comparePizzas pizza1 pizza2
+          in  putStrLn (describePizza betterPizza)))))
 
 maybeMain :: Maybe String
 maybeMain = do
