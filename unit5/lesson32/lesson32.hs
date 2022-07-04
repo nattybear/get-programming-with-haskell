@@ -1,3 +1,5 @@
+import Control.Monad
+
 considerThis :: [Int]
 considerThis = [ x | x <- [1..19], odd x ]
 
@@ -26,3 +28,15 @@ valAndSquare :: [(Int,Int)]
 valAndSquare = do
   val <- [1 .. 10]
   return (val, val^2)
+
+evensGuard :: Int -> [Int]
+evensGuard n = do
+  value <- [1 .. n]
+  guard (even value)
+  return value
+
+filter' :: (a -> Bool) -> [a] -> [a]
+filter' f xs = do
+  x <- xs
+  guard (f x)
+  return x
