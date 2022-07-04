@@ -1,4 +1,5 @@
 import Control.Monad
+import Data.Char
 
 considerThis :: [Int]
 considerThis = [ x | x <- [1..19], odd x ]
@@ -39,3 +40,10 @@ evenSquares = do
   let nSquared = n^2
   guard (even nSquared)
   return nSquared
+
+colors = ["brown", "blue", "pink", "orange"]
+
+answer :: [String]
+answer = ["Mr. " ++ capVal | val <- colors
+                           , let capVal = (\(x:xs) ->
+                                            toUpper x:xs) val]
