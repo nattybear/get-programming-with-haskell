@@ -40,3 +40,10 @@ filter' f xs = do
   x <- xs
   guard (f x)
   return x
+
+evenSquares :: [Int]
+evenSquares = do
+  n <- [0 .. 9]
+  let nSquared = n^2
+  guard (even nSquared)
+  return nSquared
