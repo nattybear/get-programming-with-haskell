@@ -15,3 +15,14 @@ powersOfTwoAndThree n = do
   let powersOfTwo   = 2^value
       powersOfThree = 3^value
   return (powersOfTwo, powersOfThree)
+
+allEvenOdds :: Int -> [(Int,Int)]
+allEvenOdds n = do
+  evenValue <- [2,4 .. n]
+  oddValue  <- [1,3 .. n]
+  return (evenValue, oddValue)
+
+valAndSquare :: [(Int,Int)]
+valAndSquare = do
+  val <- [1 .. 10]
+  return (val, val^2)
