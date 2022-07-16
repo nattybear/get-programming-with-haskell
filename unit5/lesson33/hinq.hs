@@ -87,3 +87,16 @@ teacherFirstName :: [String]
 teacherFirstName = _hinq (_select firstName)
                          finalResult
                          (_where (\_ -> True))
+
+runHINQ :: (Monad m, Alternative m) => HINQ m a b -> m b
+runHINQ (HINQ  sClause jClause wClause) = _hinq sClause jClause wClause
+runHINQ (HINQ_ sClause jClause)         = _hinq sClause jClause
+                                                        (_where (\_ -> True))
+
+query1 :: HINQ [] (Teacher, Course) Name
+query1 = HINQ (_select (teacherName . fst))
+              (_join   teachers courses teacherId teacher)
+              (_where  ((== "English") . courseTitle . snd))
+
+query2 :: HINQ [] Teacher Name
+query2 = HINQ_ (_select teacherName) teachers
