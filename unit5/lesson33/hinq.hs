@@ -27,6 +27,9 @@ data Course = Course { courseId :: Int
                      , teacher :: Int
                      } deriving Show
 
+data HINQ m a b = HINQ  (m a -> m b) (m a) (m a -> m a)
+                | HINQ_ (m a -> m b) (m a)
+
 students :: [Student]
 students = [ (Student 1 Senior   (Name "Audre"  "Lorde"))
            , (Student 2 Junior   (Name "Leslie" "Silko"))
