@@ -17,3 +17,22 @@ addStrInts s1 s2
 
 isNumber :: String -> Bool
 isNumber = all isDigit
+
+succSafer :: (Eq a, Enum a, Bounded a)
+          => a -> Maybe a
+succSafer x
+  | x == maxBound = Nothing
+  | otherwise     = Just $ succ x
+
+tailSafer :: [a] -> [a]
+tailSafer []     = []
+tailSafer (_:xs) = xs
+
+safeLast :: [a] -> Either a String
+safeLast [] = Right "empty list"
+safeLast xs = safeLast' 10000 xs
+
+safeLast' :: Int -> [a] -> Either a String
+safeLast' 0 _ = Right "List exceeds safe bound"
+safeLast' _ (x:[]) = Left x
+safeLast' n (x:xs) = safeLast' (n - 1) xs
